@@ -29,15 +29,18 @@
   font-size: 2.5vmin;
   width: 10vmin;
   padding: 1vmin;
-  cursor: pointer;
   gap: 1vmin;
 }
-
+.no-outline-navbar {
+  text-decoration: none;
+  border: none;
+  outline: none;
+  color: white;
+}
 .Name {
   font-size: 4vmin;
   padding: 1vmin;
   width: 50%;
-  cursor: pointer;
   font-weight: 800;
 }
 
@@ -361,6 +364,10 @@
   height: 8vmin;
   line-height: 8vmin;
   border-top: solid #7e7d7d 0.2vmin;
+}
+.no-outline-footer {
+  text-decoration: none;
+  color: black;
 }
 @media (max-width: 768px) {
   .footer-container2 {

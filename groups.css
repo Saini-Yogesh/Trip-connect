@@ -29,15 +29,16 @@
   font-size: 2.5vmin;
   width: 10vmin;
   padding: 1vmin;
-  cursor: pointer;
   gap: 1vmin;
 }
-
+.no-outline-navbar {
+  text-decoration: none;
+  color: white;
+}
 .Name {
   font-size: 4vmin;
   padding: 1vmin;
   width: 50%;
-  cursor: pointer;
   font-weight: 800;
 }
 
@@ -64,7 +65,7 @@
   margin: 2vmin 10vmin 2vmin 10vmin;
 }
 /* about trips */
-.Groups {
+.Main-groups {
   margin-left: 5%;
   margin-right: 5%;
   display: flex;
@@ -109,6 +110,10 @@
   border: solid transparent 0.3vmin;
   font-size: 2vmin;
   cursor: pointer;
+}
+.no-outline-footer {
+  text-decoration: none;
+  color: black;
 }
 .green-Group-container {
   background-color: #6ebb2d;

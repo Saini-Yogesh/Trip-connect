@@ -684,6 +684,10 @@
   line-height: 8vmin;
   border-top: solid #7e7d7d 0.2vmin;
 }
+.no-outline-footer {
+  text-decoration: none;
+  color: black;
+}
 @media (max-width: 768px) {
   .container2,
   .container3,

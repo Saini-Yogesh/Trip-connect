@@ -3,6 +3,8 @@
   padding: 0px;
   font-family: Arial, Helvetica, sans-serif;
   color: white;
+}
+body {
   background-color: #002e33;
 }
 /* navbar */
@@ -28,6 +30,10 @@
   cursor: pointer;
   gap: 1vmin;
 }
+.no-outline-navbar {
+  text-decoration: none;
+  color: white;
+}
 .Name {
   font-size: 4vmin;
   padding: 1vmin;
@@ -42,8 +48,6 @@
   height: 7vmin;
   font-size: 2.5vmin;
   padding: 1vmin;
-  cursor: pointer;
-  color: black;
 }
 /* container  */
 .container {
@@ -104,6 +108,14 @@
 .container-button2 {
   background-color: none;
   border: solid white 0.2vmin;
+  background-color: #002e33;
+}
+.no-outline-main1 {
+  text-decoration: none;
+  color: black;
+}
+.no-outline-main2 {
+  text-decoration: none;
 }
 /* Review rating styles */
 .review-rating {
