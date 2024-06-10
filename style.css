@@ -688,7 +688,7 @@
   text-decoration: none;
   color: black;
 }
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .container2,
   .container3,
   .container4,
@@ -712,6 +712,9 @@
   .gallery-container3-image-box1,
   .gallery-container3-image-box2 {
     width: 100%; /* Make image boxes occupy full width */
+  }
+  .gallery-container4-text2{
+    text-align: center;
   }
 
   .footer-container2-part {
