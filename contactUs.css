@@ -1,0 +1,121 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* main contact part  */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+/* contact form  */
+.contactForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-form {
+  width: 70vmin;
+  padding: 3vmin;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form p {
+  font-size: 7vmin;
+}
+
+.contact-form h4 {
+  font-size: 2.5vmin;
+  font-weight: 400;
+  padding: 1vmin;
+}
+
+.name-text,
+.email-text,
+.massage-text {
+  font-size: 3vmin;
+  padding: 1vmin;
+}
+
+#name,
+#email,
+#message {
+  height: 5vmin;
+  margin: 1vmin;
+  padding: 1vmin;
+  border-radius: 1vmin;
+  border: solid #aba0a0 0.1vmin;
+  font-size: 3vmin;
+}
+
+#message {
+  height: 12vmin;
+  font-size: 2.5vmin;
+}
+
+.chekbox-Text {
+  padding: 2vmin;
+  display: flex;
+  align-items: center;
+}
+
+.terms-text {
+  font-size: 2.2vmin;
+  margin: 1vmin;
+}
+
+.submit-button {
+  height: 7vmin;
+  width: 20vmin;
+  border-radius: 5vmin;
+  margin-left: 3vmin;
+  border: none;
+  background-color: #6ebb2d;
+  font-size: 2.5vmin;
+}
+
+/* contact-info  */
+.contactinfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  max-width: 40vmin;
+}
+
+.contactinfo-box {
+  width: 30vmin;
+  padding: 3vmin;
+}
+
+.main-contact-icons {
+  font-size: 5vmin;
+  padding: 1vmin;
+}
+
+.contactinfo-text1 {
+  font-size: 3vmin;
+  font-weight: 700;
+  padding: 1vmin;
+}
+
+.contactinfo-text2 {
+  font-size: 2.5vmin;
+  padding: 0.5vmin;
+}
+@media (max-width: 850px) {
+  .contactinfo {
+    height: unset;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 400px) {
+  .contact-form {
+    width: 90vmin;
+  }
+}

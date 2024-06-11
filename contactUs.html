@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trips Page</title>
-    <link rel="stylesheet" href="/Trip-connect/trips.css" />
-    <link rel="stylesheet" href="footerStyle.css" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="/Trip-connect/contactUs.css" />
     <link rel="stylesheet" href="headerStyle.css" />
+    <link rel="stylesheet" href="footerStyle.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -35,72 +35,59 @@
           <p class="Social main-links-style">
             <a href="contactUs.html" class="no-outline-navbar"> Social</a>
           </p>
-          <a href="SignIn.html" class="no-outline-navbar"
-            ><button class="Join-now-button">Sign In</button>
-          </a>
+          <a href="LoginPage.html" class="no-outline-navbar">
+            <button class="Join-now-button">Join Now</button></a
+          >
         </div>
       </div>
     </header>
-    <!-- About Text  -->
-    <div class="About-text">About Trips</div>
-    <!-- about us -->
-    <div class="about-section">
-      <!-- container1  -->
-      <div class="container1">
-        <div class="container1-text">
-          <p class="container1-text1">Bali and Lembongan</p>
-          <p class="container1-text2">
-            <b
-              >Amazing package for your and your friends to be satisfied on
-              vacation in Bali- Lombok island. Then it is recommended that you
-              book.
-            </b>
-          </p>
-          <div class="container1-buttons">
-            <button class="container1-Book-now-button">Book Now</button>
-            <button class="container1-Read-more-button">Read More</button>
+    <!-- main part -->
+    <main>
+      <div class="contactForm">
+        <form class="contact-form">
+          <p>Contact us</p>
+          <h4>Our friendly team would love to hear from you.</h4>
+          <label class="name-text" for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+          <label class="email-text" for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <label class="massage-text" for="message">Message:</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Type your massage...."
+          ></textarea>
+          <div class="chekbox-Text">
+            <input type="checkbox" id="terms" name="terms" required />
+            <label class="terms-text" for="terms">Terms and Conditions</label>
           </div>
-        </div>
-        <img src="/Trip-connect/tripspage-img/trips-img1.jpg" />
+          <input class="submit-button" type="submit" value="Submit" />
+        </form>
       </div>
-      <!-- container2  -->
-      <div class="container2">
-        <img src="/Trip-connect/tripspage-img/trips-img2.jpg" />
-        <div class="container2-text">
-          <p class="container2-text1">Padar Island</p>
-          <p class="container2-text2">
-            <b>
-              If you have never visited Padar island i suggest you go here , it
-              will be a life time experience that Padar island. Then it is
-              recommended that you book.
-            </b>
+      <div class="contactinfo">
+        <div class="contactinfo-box">
+          <p class="main-contact-icons"><i class="fas fa-mail-bulk"></i></p>
+          <p class="contactinfo-text1">Email</p>
+          <p class="contactinfo-text2">hello@tripconnect.com</p>
+          <p class="contactinfo-text2">info@tripconnect.com</p>
+        </div>
+        <div class="contactinfo-box">
+          <p class="main-contact-icons"><i class="fa-solid fa-phone"></i></p>
+          <p class="contactinfo-text1">Phone</p>
+          <p class="contactinfo-text2">+91-885-298-3794</p>
+          <p class="contactinfo-text2">+91-885-298-3794</p>
+        </div>
+        <div class="contactinfo-box">
+          <p class="main-contact-icons">
+            <i class="fa-solid fa-location-dot"></i>
           </p>
-          <div class="container2-buttons">
-            <button class="container2-Book-Now-button">Book Now</button>
-            <button class="container2-Read-more-button">Read More</button>
-          </div>
+          <p class="contactinfo-text1">Location</p>
+          <p class="contactinfo-text2">4th-flor,Godrej Plaza</p>
+          <p class="contactinfo-text2">Delhi-110046</p>
         </div>
       </div>
-      <!-- container3  -->
-      <div class="container3">
-        <div class="container3-text">
-          <p class="container3-text1">Journey Sumba Island</p>
-          <p class="container3-text2">
-            <b>
-              This 4 days 3 Nights Sumba Island Trip packages is ready to go
-              every day. Starting from west Sumba to east Sumba. Then it is
-              recommended that you book.
-            </b>
-          </p>
-          <div class="container3-buttons">
-            <button class="container3-Book-Now-button">Book Now</button>
-            <button class="container3-Read-more-button">Read More</button>
-          </div>
-        </div>
-        <img src="/Trip-connect/tripspage-img/trips-img3.jpg" />
-      </div>
-    </div>
-    <!-- footer container  -->
+    </main>
+    <!-- footer container -->
     <footer>
       <div class="footer">
         <!-- footer container 1  -->

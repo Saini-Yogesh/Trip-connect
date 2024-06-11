@@ -1,0 +1,122 @@
+
+/* footer container   */
+/* footer container 1  */
+footer {
+  background-color: white;
+}
+.footer-container1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #6ebb2d;
+  color: white;
+  height: 60vmin;
+  text-align: center;
+}
+.footer-container1-text1 {
+  font-size: 7vmin;
+  padding: 3vmin;
+}
+.footer-container1-text2 {
+  font-size: 3vmin;
+}
+.footer-container1-join-now-button {
+  margin-top: 5vmin;
+  width: 20vmin;
+  height: 7vmin;
+  border-radius: 5vmin;
+  border: none;
+  padding: 2vmin;
+  font-size: 2.5vmin;
+  cursor: pointer;
+}
+/* footer container 2  */
+.footer-container2 {
+  display: flex;
+  justify-content: center;
+  margin: 5% 7.5% 5% 7.5%;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.footer-container2-part {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10vmin;
+  /* justify-content: space-between; */
+  width: 100%;
+}
+.footer-container2-part1-text1 {
+  font-size: 6vmin;
+  font-weight: 800;
+  padding: 1vmin;
+}
+.footer-container2-part1-text2 {
+  font-size: 3vmin;
+  font-weight: 600;
+  padding: 1vmin;
+}
+.footer-container2-part1-Join-Now-button {
+  margin-top: 2vmin;
+  width: 20vmin;
+  height: 7vmin;
+  border-radius: 5vmin;
+  border: none;
+  padding: 1vmin;
+  font-size: 2.5vmin;
+  background-color: #6ebb2d;
+  cursor: pointer;
+}
+.footer-container2-part2 {
+  width: auto;
+  height: auto;
+  flex-direction: column;
+  text-align: left;
+}
+.footer-container2-part2-about-section {
+  font-size: 2.5vmin;
+  font-weight: 600;
+  padding: 0.5vmin;
+}
+.footer-container2-part3-contact-info {
+  font-size: 2.5vmin;
+  font-weight: 600;
+  padding: 0.5vmin;
+  flex-direction: column;
+  text-align: left;
+}
+.footer-container2-part3-contact-info-social i {
+  font-size: 2.5vmin;
+  color: white;
+  background-color: black;
+  padding: 0.3vmin;
+  margin-right: 0.5rem;
+}
+.footer-container2-part3-contact-info-social {
+  padding: 0.5vmin;
+  display: flex;
+}
+.footer-container3 {
+  margin: 0 7.5% 0 7.5%;
+  text-align: center;
+  font-size: 2.5vmin;
+  height: 8vmin;
+  line-height: 8vmin;
+  border-top: solid #7e7d7d 0.2vmin;
+}
+.no-outline-footer {
+  text-decoration: none;
+  color: black;
+}
+@media (max-width: 768px) {
+  .footer-container2 {
+    flex-direction: column;
+  }
+  .footer-container2-part {
+    gap: 5vmin;
+  }
+  .footer-container2-part1-Join-Now-button {
+    width: 90%;
+  }
+}
