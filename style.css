@@ -206,7 +206,7 @@
   border: solid #a7a7a7 0.3vmin;
   cursor: pointer;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
   .container3 img {
     order: 2;
   }
