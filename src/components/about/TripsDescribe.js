@@ -1,22 +1,8 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import "./TripsDescribeCSS.css";
 
 const TripsDescribe = (props) => {
-  let navigate = useNavigate();
-
-  const handleOnClick = () => {
-    navigate("/people-info");
-  };
-
-  const {
-    heading,
-    description,
-    button1Text,
-    button2Text,
-    button1Link,
-    button2Link,
-  } = props;
+  const { heading, description, button1Text, button2Text } = props;
 
   return (
     <div className="TripsDescribePart-text">
@@ -27,12 +13,8 @@ const TripsDescribe = (props) => {
         <b>{description}</b>
       </p>
       <div className="TripsDescribePart-buttons">
-        <button className="TripsDescribePart-button1" onClick={handleOnClick}>
-          {button1Text}
-        </button>
-        <button className="TripsDescribePart-button2" onClick={handleOnClick}>
-          {button2Text}
-        </button>
+        <button className="TripsDescribePart-button1">{button1Text}</button>
+        <button className="TripsDescribePart-button2">{button2Text}</button>
       </div>
     </div>
   );

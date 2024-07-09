@@ -36,9 +36,7 @@ const Navbar = (props) => {
                 Connect
               </Link>
             </p>
-            <Link to="/signInSignOut" className="no-outline-navbar">
-              <button className="Join-now-button">SignIn/SignUp</button>
-            </Link>
+            <button className="Join-now-button">SignIn/SignUp</button>
           </div>
         </div>
       </div>

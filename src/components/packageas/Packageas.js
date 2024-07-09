@@ -2,7 +2,6 @@ import React from "react";
 import "./PackageasCSS.css";
 import AboutGroup1 from "./AboutGroup1";
 import AboutGroup2 from "./AboutGroup2";
-import { useLocation, useNavigate } from "react-router-dom";
 
 const Packageas = () => {
   const featuresDetal = [
