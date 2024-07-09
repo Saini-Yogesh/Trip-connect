@@ -12,8 +12,7 @@ import { useLocation } from "react-router-dom";
 const AppContent = () => {
   const location = useLocation();
   const getBackgroundColor = (path) => {
-    if (path === "/" || path === "/Trip-connect") return "";
-    else return "#002e33";
+    return path === "/" || path === "/Trip-connect" ? "" : "#002e33";
   };
   return (
     <>
