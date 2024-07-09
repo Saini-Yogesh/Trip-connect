@@ -1,0 +1,141 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* Upcoming-Tour text */
+.Upcoming-Tour {
+  font-size: 3vmin;
+  font-weight: 400;
+  color: #7e7d7d;
+  border-bottom: #7e7d7d solid 0.2vmin;
+  padding: 1vmin 1vmin 1vmin 6vmin;
+  display: flex;
+  align-items: center;
+  height: 6vmin;
+  margin: 2vmin 10vmin 2vmin 10vmin;
+}
+/* about trips */
+.Main-groups {
+  margin-left: 5%;
+  margin-right: 5%;
+  display: flex;
+  flex-direction: column;
+}
+/* Groups-container */
+.Groups-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3vmin 5vmin 3vmin 5vmin;
+  margin: 1vmin 5vmin 1vmin 5vmin;
+  font-weight: 900;
+  min-height: 30vmin;
+}
+.Groups-container-text1 {
+  font-size: 2.5vmin;
+  padding: 1vmin;
+  color: #a7a7a7;
+}
+.Groups-container-text2 {
+  font-size: 6vmin;
+  width: 40vmin;
+  padding: 1vmin;
+}
+.Groups-container-button {
+  max-width: 70vmin;
+  color: #a7a7a7;
+}
+.Groups-container-button-text1 {
+  font-size: 2.5vmin;
+  margin-top: 3vmin;
+}
+.Groups-container-Book-now-button {
+  margin-top: 3vmin;
+  padding: 2vmin;
+  background-color: #6ebb2d;
+  width: 20vmin;
+  border: none;
+  height: 7vmin;
+  border-radius: 5vmin;
+  border: solid transparent 0.3vmin;
+  font-size: 2vmin;
+  cursor: pointer;
+}
+.no-outline-footer {
+  text-decoration: none;
+  color: black;
+}
+.green-Group-container {
+  background-color: #6ebb2d;
+}
+.green-Group-container-text1 {
+  color: white;
+}
+.green-Group-container-button-text1 {
+  color: white;
+}
+.green-Group-container-button {
+  background-color: white;
+}
+@media only screen and (max-width: 800px) {
+  .Groups-container {
+    flex-direction: column;
+    margin: 1vmin 3vmin 1vmin 3vmin;
+    gap: 0;
+  }
+  .Groups-container-text2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .Groups-container-text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .Groups-container-button {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .Groups-container-Book-now-button {
+    width: 80%;
+  }
+}
+/* footer container   */
+/* footer container 1  */
+.footer-container1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #6ebb2d;
+  color: white;
+  height: 60vmin;
+  text-align: center;
+}
+.footer-container1-text1 {
+  font-size: 7vmin;
+  padding: 3vmin;
+}
+.footer-container1-text2 {
+  font-size: 3vmin;
+}
+.footer-container1-join-now-button {
+  margin-top: 5vmin;
+  width: 20vmin;
+  height: 7vmin;
+  border-radius: 5vmin;
+  border: none;
+  padding: 2vmin;
+  font-size: 2.5vmin;
+  cursor: pointer;
+}

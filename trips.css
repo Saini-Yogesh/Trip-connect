@@ -1,0 +1,214 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* about text  */
+.About-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10vmin;
+  font-weight: 900;
+  padding: 5vmin;
+}
+@media only screen and (max-width: 1199px) {
+  .About-text {
+    padding: 0;
+    padding-top: 5vmin;
+  }
+}
+/* about Us  */
+.about-section {
+  margin-left: 7.5%;
+  margin-right: 7.5%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+/* container1  */
+.container1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.container1-text {
+  width: 80vmin;
+  flex-direction: column;
+  margin-top: 15vmin;
+}
+.container1-text1 {
+  font-size: 7vmin;
+  padding: 1vmin;
+  font-weight: 600;
+}
+.container1-text2 {
+  font-size: 2.5vmin;
+  padding: 1vmin;
+  color: rgb(69, 67, 67);
+  margin-top: 1vmin;
+}
+.container1 img {
+  width: 85vmin;
+  height: 60vmin;
+  object-fit: cover;
+}
+.container1-buttons {
+  padding: 1vmin;
+  margin-top: 1vmin;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.container1-Book-now-button {
+  padding: 2vmin;
+  background-color: #6ebb2d;
+  width: 25vmin;
+  border: none;
+  height: 7vmin;
+  border-radius: 5vmin;
+  border: solid transparent 0.3vmin;
+  font-size: 2vmin;
+  cursor: pointer;
+}
+.container1-Read-more-button {
+  padding: 2vmin;
+  width: 25vmin;
+  height: 7vmin;
+  border-radius: 5vmin;
+  font-size: 2vmin;
+  background-color: white;
+  border: solid #a7a7a7 0.3vmin;
+  cursor: pointer;
+}
+/* container2 */
+.container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8vmin;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.container2-text {
+  width: 80vmin;
+  flex-direction: column;
+  /* margin: 35vmin 0 0 8vmin; */
+}
+.container2-text1 {
+  font-size: 7vmin;
+  width: 80vmin;
+  padding: 1vmin;
+  font-weight: 600;
+}
+.container2-text2 {
+  font-size: 2.5vmin;
+  padding: 1vmin;
+  color: rgb(69, 67, 67);
+  margin-top: 1vmin;
+}
+.container2 img {
+  width: 85vmin;
+  height: 60vmin;
+  object-fit: cover, cover;
+}
+.container2-buttons {
+  padding: 1vmin;
+  margin-top: 1vmin;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.container2-Book-Now-button {
+  padding: 2vmin;
+  background-color: #6ebb2d;
+  width: 25vmin;
+  border: none;
+  height: 7vmin;
+  border-radius: 5vmin;
+  border: solid transparent 0.3vmin;
+  font-size: 2vmin;
+  cursor: pointer;
+}
+.container2-Read-more-button {
+  padding: 2vmin;
+  width: 25vmin;
+  height: 7vmin;
+  border-radius: 5vmin;
+  font-size: 2vmin;
+  background-color: white;
+  border: solid #a7a7a7 0.3vmin;
+  cursor: pointer;
+}
+@media (max-width: 1200px) {
+  .container2 img {
+    order: 2;
+  }
+  .container2-text {
+    order: 1;
+  }
+}
+/* container3 */
+.container3 {
+  margin-top: 8vmin;
+  margin-bottom: 8vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.container3-text {
+  width: 80vmin;
+  flex-direction: column;
+  margin-top: 8vmin;
+}
+.container3-text1 {
+  font-size: 7vmin;
+  width: 88vmin;
+  padding: 1vmin;
+  font-weight: 600;
+}
+.container3-text2 {
+  font-size: 2.5vmin;
+  padding: 1vmin;
+  color: rgb(69, 67, 67);
+  margin-top: 1vmin;
+}
+.container3 img {
+  width: 85vmin;
+  height: 60vmin;
+  object-fit: cover, cover;
+}
+.container3-buttons {
+  padding: 1vmin;
+  margin-top: 1vmin;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.container3-Book-Now-button {
+  padding: 2vmin;
+  background-color: #6ebb2d;
+  width: 25vmin;
+  border: none;
+  height: 7vmin;
+  border-radius: 5vmin;
+  border: solid transparent 0.3vmin;
+  font-size: 2vmin;
+  cursor: pointer;
+}
+.container3-Read-more-button {
+  padding: 2vmin;
+  width: 25vmin;
+  height: 7vmin;
+  border-radius: 5vmin;
+  font-size: 2vmin;
+  background-color: white;
+  border: solid #a7a7a7 0.3vmin;
+  cursor: pointer;
+}
