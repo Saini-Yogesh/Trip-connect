@@ -1,0 +1,18 @@
+.Packageas {
+  margin-left: 7.5%;
+  margin-right: 7.5%;
+  display: flex;
+  flex-direction: column;
+}
+/* Packageas-text */
+.Packageas-text {
+  margin-top: 10vmin;
+  margin-bottom: 3vmax;
+  border-bottom: solid rgb(69, 67, 67) 0.2vmin;
+  font-size: 3vmin;
+  padding: 1vmin;
+  color: rgb(69, 67, 67);
+}
+.Packageas-text b {
+  margin-left: 5vmin;
+}

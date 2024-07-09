@@ -1,0 +1,86 @@
+.Packageas-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3vmin 5vmin 3vmin 5vmin;
+  margin: 1vmin 5vmin 1vmin 5vmin;
+  font-weight: 900;
+  min-height: 30vmin;
+}
+.Packageas-container-text1 {
+  font-size: 2.5vmin;
+  padding: 1vmin;
+  color: #a7a7a7;
+}
+.Packageas-container-text2 {
+  font-size: 6vmin;
+  width: 40vmin;
+  padding: 1vmin;
+}
+.Packageas-container-button {
+  max-width: 70vmin;
+  color: #a7a7a7;
+}
+.Packageas-container-button-text1 {
+  font-size: 2.5vmin;
+  margin-top: 3vmin;
+}
+.Packageas-container-Book-Now-button {
+  margin-top: 3vmin;
+  padding: 2vmin;
+  background-color: #6ebb2d;
+  width: 20vmin;
+  border: none;
+  height: 7vmin;
+  border-radius: 5vmin;
+  border: solid transparent 0.3vmin;
+  font-size: 2vmin;
+  cursor: pointer;
+  color: black;
+  font-weight: 500;
+}
+.Packageas-Group-container {
+  background-color: #6ebb2d;
+}
+.Packageas-Group-container-text1 {
+  color: white;
+}
+.Packageas-Group-container-button-text1 {
+  color: white;
+}
+.Packageas-Group-container-button {
+  background-color: white;
+}
+@media only screen and (max-width: 700px) {
+  .Packageas-container {
+    flex-direction: column;
+    margin: 1vmin 3vmin 1vmin 3vmin;
+    gap: 0;
+  }
+  .Packageas-container-text2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .Packageas-container-text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .Packageas-container-button {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .Packageas-container-Book-now-button {
+    width: 80%;
+  }
+}

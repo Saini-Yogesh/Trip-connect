@@ -1,0 +1,59 @@
+.TripsDescribePart-text {
+  width: 80vmin;
+  flex-direction: column;
+  /* margin: 35vmin 0 0 8vmin; */
+}
+.TripsDescribePart-text1 {
+  font-size: 7vmin;
+  width: 80vmin;
+  padding: 1vmin;
+}
+.TripsDescribePart-text2 {
+  font-size: 3vmin;
+  padding: 1vmin;
+  color: rgb(69, 67, 67);
+  margin-top: 1vmin;
+}
+.TripsDescribePart img {
+  width: 85vmin;
+  /* height: 60vmin; */
+  object-fit: cover, cover;
+}
+.TripsDescribePart-buttons {
+  padding: 1vmin;
+  margin-top: 1vmin;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.TripsDescribePart-button1 {
+  margin-right: 2vmin;
+  padding: 2vmin;
+  background-color: #6ebb2d;
+  width: 25vmin;
+  border: none;
+  height: 7vmin;
+  border-radius: 5vmin;
+  border: solid transparent 0.3vmin;
+  font-size: 2vmin;
+  cursor: pointer;
+}
+.TripsDescribePart-button2 {
+  margin-left: 2vmin;
+  padding: 2vmin;
+  width: 25vmin;
+  height: 7vmin;
+  border-radius: 5vmin;
+  font-size: 2vmin;
+  background-color: white;
+  border: solid #a7a7a7 0.3vmin;
+  cursor: pointer;
+}
+@media (max-width: 1300px) {
+  .TripsDescribePart img {
+    order: 2;
+  }
+  .TripsDescribePart-text {
+    order: 1;
+  }
+}

@@ -1,0 +1,48 @@
+.gallery-container3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5vmin;
+  margin-top: 7vmin;
+}
+.gallery-container3-image-box1 {
+  width: 40%;
+  height: 50vmin;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
+    url(./GalleryImages/gallary-img4.jpg);
+  background-size: cover, cover;
+  background-position: 50% 50%, 50% 50%;
+}
+.gallery-container3-image-box2 {
+  width: 40%;
+  height: 50vmin;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
+    url(./GalleryImages/gallary-img5.jpg);
+  background-size: cover, cover;
+  background-position: 50% 50%, 50% 50%;
+}
+.gallery-container3-image-boxes {
+  margin: 10vmin 0 0 10vmin;
+  padding: 1vmin;
+  color: white;
+  font-weight: 800;
+  flex-direction: column;
+  /* text-align: center; */
+}
+.gallery-container3-image-boxes-text1 {
+  font-size: 3vmin;
+  padding: 1vmin;
+}
+.gallery-container3-image-boxes-text2 {
+  width: 20vmin;
+  font-size: 6vmin;
+  padding: 1vmin;
+}
+
+@media (max-width: 1000px) {
+  .gallery-container3-image-box1,
+  .gallery-container3-image-box2 {
+    width: 100%; /* Make image boxes occupy full width */
+  }
+}

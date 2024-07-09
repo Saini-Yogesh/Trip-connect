@@ -1,0 +1,19 @@
+.container1 {
+  margin-top: 7vmin;
+  text-align: center;
+}
+.container1-text1 {
+  font-size: 7vmin;
+  padding: 1vmin;
+}
+.container1-text2 {
+  margin-top: 1vmin;
+  padding: 1vmin;
+  font-size: 3vmin;
+  color: #a7a7a7;
+}
+@media only screen and (max-width: 1199px) {
+  .container1 {
+    margin-bottom: 0;
+  }
+}

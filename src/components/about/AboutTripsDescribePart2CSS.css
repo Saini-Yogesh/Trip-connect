@@ -1,0 +1,8 @@
+.TripsDescribePart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8vmin;
+  flex-wrap: wrap;
+  gap: 2rem;
+}

@@ -1,0 +1,16 @@
+.List {
+  text-align: center;
+}
+
+.People-List {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
+
+.rows {
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}

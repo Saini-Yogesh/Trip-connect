@@ -1,0 +1,28 @@
+.gallery-container4 {
+  margin: 7vmin 0px 3vmin 0px;
+  display: flex;
+  color: white;
+  gap: 7%;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+.gallery-container4-text1 {
+  font-size: 7vmin;
+  font-weight: 800;
+  width: 80vmin;
+}
+.gallery-container4-text2 {
+  font-size: 3vmin;
+  font-weight: 800;
+}
+
+@media (max-width: 1000px) {
+  .gallery-container4 {
+    flex-direction: column;
+  }
+  .gallery-container4-text2,
+  .gallery-container4-text1 {
+    text-align: center;
+  }
+}

@@ -1,0 +1,22 @@
+.gallery-container1 {
+  height: 40vmin;
+  color: white;
+  display: flex;
+}
+.gallery-container1-text {
+  width: 30vmin;
+  margin-top: 10vmin;
+}
+.gallery-container1-text1 {
+  font-size: 3vmin;
+  padding: 1vmin;
+  color: #7e7d7d;
+}
+.gallery-container1-text2 {
+  font-size: 5vmin;
+  padding: 1vmin;
+}
+.gallery-container1-text3 {
+  margin: 19vmin 0 0 20vmin;
+  font-size: 3vmin;
+}

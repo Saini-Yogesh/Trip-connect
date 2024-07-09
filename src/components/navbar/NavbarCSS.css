@@ -1,0 +1,50 @@
+.header-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 11;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 15vmin;
+  color: white;
+  z-index: 10;
+}
+.header-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+}
+.Name {
+  font-size: 4vmin;
+  padding: 1vmin;
+  width: 50%;
+  font-weight: 800;
+}
+.main-links-style {
+  text-align: center;
+  font-size: 2.5vmin;
+  width: 10vmin;
+  padding: 1vmin;
+  gap: 1vmin;
+}
+.no-outline-navbar {
+  text-decoration: none;
+  border: none;
+  outline: none;
+  color: white;
+}
+.Join-now-button {
+  border: none;
+  background-color: #6ebb2d;
+  border-radius: 5vmin;
+  width: 40vmin;
+  height: 7vmin;
+  font-size: 2.5vmin;
+  padding: 1vmin;
+  cursor: pointer;
+  color: white;
+  cursor: pointer;
+}

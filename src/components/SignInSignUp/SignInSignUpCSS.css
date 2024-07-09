@@ -1,0 +1,132 @@
+.main-signINUP {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #219c90;
+}
+.SignUpIn-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.35);
+  background-color: white;
+}
+.part1,
+.part2 {
+  width: 55vmin;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 90vmin;
+  border-top-right-radius: 3vmin;
+  border-bottom-right-radius: 3vmin;
+}
+.part1 {
+  background-color: green;
+}
+.part2 {
+  background-color: #fff;
+}
+.welcome-text,
+.Sign-in-text {
+  font-size: 5vmin;
+  font-weight: 700;
+  margin: 2vmin;
+}
+.Sign-in-With-ID-Passowrd,
+.Lets-Start-New-Tour {
+  font-size: 2.3vmin;
+}
+.signUp-button,
+.signIn-button {
+  background-color: rgb(255, 13, 13);
+  color: #fff;
+  font-size: 2.3vmin;
+  padding: 2vmin 7vmin;
+  border: 0.1vmin solid transparent;
+  border-radius: 1vmin;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 2vmin;
+  cursor: pointer;
+}
+.login-form {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50vmin;
+}
+.login-input {
+  background-color: #eee;
+  border: solid black 0.1vmin;
+  margin: 1.5vmin;
+  padding: 2vmin;
+  font-size: 2.5vmin;
+  width: 40vmin;
+  border-radius: 1vmin;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.enter-email-password {
+  padding: 1vmin;
+  font-size: 2.3vmin;
+}
+.forget-password {
+  color: #333;
+  text-decoration: none;
+  font-size: 2vmin;
+  padding: 0.5vmin;
+  margin: 1vmin;
+  cursor: pointer;
+}
+/* Socil icon  */
+.icons {
+  color: #333;
+  text-decoration: none;
+  font-size: 3vmin;
+  margin: 1vmin;
+  border: 0.1vmin solid #ccc;
+  border-radius: 20%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 7vmin;
+  height: 7vmin;
+}
+@media (max-width: 820px) {
+  .part1,
+  .part2 {
+    width: 100%;
+    min-height: auto;
+    padding: 3vmin;
+    border-radius: 0px;
+  }
+  .welcome-text,
+  .Sign-in-text {
+    font-size: 4vmin;
+  }
+  .do-not-have-account-text,
+  .signUp-button,
+  .signIn-button,
+  .enter-email-password,
+  .forget-password,
+  .icons {
+    font-size: 2vmin;
+  }
+  .signUp-button,
+  .signIn-button {
+    padding: 2vmin 5vmin;
+  }
+  .login-input {
+    font-size: 2vmin;
+    width: 60vmin;
+  }
+}
