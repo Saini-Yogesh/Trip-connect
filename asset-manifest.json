@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/Trip-connect/static/css/main.d84df47d.css",
+    "main.js": "/Trip-connect/static/js/main.01890460.js",
+    "static/js/453.b16ac5c2.chunk.js": "/Trip-connect/static/js/453.b16ac5c2.chunk.js",
+    "static/media/trips-img1.jpg": "/Trip-connect/static/media/trips-img1.7a9f01d3378f7b713fb4.jpg",
+    "static/media/trips-img2.jpg": "/Trip-connect/static/media/trips-img2.3ba09913030f8ca63b26.jpg",
+    "static/media/LoginPage-img.jpg": "/Trip-connect/static/media/LoginPage-img.c52ab3cf67f1387c2013.jpg",
+    "static/media/about-section-img2.jpg": "/Trip-connect/static/media/about-section-img2.9b9a155908359640e59c.jpg",
+    "static/media/trips-img3.jpg": "/Trip-connect/static/media/trips-img3.c4be550b266743abfa1b.jpg",
+    "static/media/about-section-img1.jpg": "/Trip-connect/static/media/about-section-img1.bc12dd92a2dfefbbf2c2.jpg",
+    "static/media/review-img2.jpg": "/Trip-connect/static/media/review-img2.5542d2ac8ed0fb6c9ea4.jpg",
+    "static/media/review-img1.jpg": "/Trip-connect/static/media/review-img1.095b429d8854263fc67e.jpg",
+    "static/media/hero-section.jpg": "/Trip-connect/static/media/hero-section.0853380313a20e687763.jpg",
+    "static/media/LoginPage-img2.jpg": "/Trip-connect/static/media/LoginPage-img2.605557d4041b3e778be8.jpg",
+    "static/media/about-section-img3.jpg": "/Trip-connect/static/media/about-section-img3.4fabb53c0c8b95f8c80b.jpg",
+    "static/media/review-img3.jpg": "/Trip-connect/static/media/review-img3.596d688195cfcbdef036.jpg",
+    "static/media/trips-img4.jpg": "/Trip-connect/static/media/trips-img4.05e45e5114cfdf8399b5.jpg",
+    "static/media/gallary-img4.jpg": "/Trip-connect/static/media/gallary-img4.39064cda612f29bd9845.jpg",
+    "static/media/gallary-img5.jpg": "/Trip-connect/static/media/gallary-img5.5efa2644aa756ec3b129.jpg",
+    "index.html": "/Trip-connect/index.html",
+    "main.d84df47d.css.map": "/Trip-connect/static/css/main.d84df47d.css.map",
+    "main.01890460.js.map": "/Trip-connect/static/js/main.01890460.js.map",
+    "453.b16ac5c2.chunk.js.map": "/Trip-connect/static/js/453.b16ac5c2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d84df47d.css",
+    "static/js/main.01890460.js"
+  ]
+}
