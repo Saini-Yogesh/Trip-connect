@@ -8,6 +8,7 @@ import Connect from "./components/Connect";
 import Groups from "./components/Groups";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import SignIn from "./components/SignInSignUp/SignIn";
 
 const AppContent = () => {
   const location = useLocation();
@@ -24,6 +25,7 @@ const AppContent = () => {
         <Route exact path="/trips" element={<Trips />} />
         <Route exact path="/connect" element={<Connect />} />
         <Route exact path="/groups" element={<Groups />} />
+        <Route exact path="/signIn" element={<SignIn />} />
       </Routes>
     </>
   );

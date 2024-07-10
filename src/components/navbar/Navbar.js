@@ -36,7 +36,9 @@ const Navbar = (props) => {
                 Connect
               </Link>
             </p>
-            <button className="Join-now-button">SignIn/SignUp</button>
+            <Link to="/signIn">
+              <button className="Join-now-button">SignIn/SignUp</button>
+            </Link>
           </div>
         </div>
       </div>
