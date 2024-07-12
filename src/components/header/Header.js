@@ -1,7 +1,9 @@
 import React from "react";
 import "./HeaderCSS.css";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="hero-section">
@@ -13,7 +15,14 @@ const Header = () => {
             <p className="text2">
               Plan trips and connect with travelers easily.
             </p>
-            <button className="get-started-button">Get Started!</button>
+            <button
+              className="get-started-button"
+              onClick={() => {
+                navigate("/Trip-connect/register");
+              }}
+            >
+              Get Started!
+            </button>
           </div>
           <div className="Social-icon">
             <i className="fa-brands fa-instagram"></i>

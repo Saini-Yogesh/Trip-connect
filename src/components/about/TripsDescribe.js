@@ -1,9 +1,17 @@
 import React from "react";
 import "./TripsDescribeCSS.css";
+import { useNavigate } from "react-router-dom";
 
 const TripsDescribe = (props) => {
-  const { heading, description, button1Text, button2Text } = props;
-
+  const navigate = useNavigate();
+  const {
+    heading,
+    description,
+    button1Text,
+    button2Text,
+    button1Link,
+    button2Link,
+  } = props;
   return (
     <div className="TripsDescribePart-text">
       <p className="TripsDescribePart-text1">
@@ -13,8 +21,22 @@ const TripsDescribe = (props) => {
         <b>{description}</b>
       </p>
       <div className="TripsDescribePart-buttons">
-        <button className="TripsDescribePart-button1">{button1Text}</button>
-        <button className="TripsDescribePart-button2">{button2Text}</button>
+        <button
+          className="TripsDescribePart-button1"
+          onClick={() => {
+            navigate(button1Link);
+          }}
+        >
+          {button1Text}
+        </button>
+        <button
+          className="TripsDescribePart-button2"
+          onClick={() => {
+            navigate(button2Link);
+          }}
+        >
+          {button2Text}
+        </button>
       </div>
     </div>
   );

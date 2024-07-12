@@ -63,7 +63,7 @@ const Trips = () => {
               description={group.description}
               button1Text={group.button1Text}
               button2Text={group.button2Text}
-              button1Link={group.button1Link}
+              button1Link="/Trip-connect/trips/PeopleInfo"
               button2Link={group.button2Link}
               imageLink={group.imageLink}
             />
@@ -74,7 +74,7 @@ const Trips = () => {
               description={group.description}
               button1Text={group.button1Text}
               button2Text={group.button2Text}
-              button1Link={group.button1Link}
+              button1Link="/Trip-connect/trips/PeopleInfo"
               button2Link={group.button2Link}
               imageLink={group.imageLink}
             />

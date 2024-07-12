@@ -1,0 +1,46 @@
+.Discover-Benefits-Text {
+  color: white;
+  font-size: 7vmin;
+  font-weight: 700;
+}
+
+.info-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 2rem;
+  background-color: #1c2534;
+}
+
+.info-box {
+  flex: 1 1 22%;
+  margin: 1rem;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(160, 14, 14, 0.1);
+  text-align: center;
+}
+
+.info-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #007bff;
+}
+
+.info-heading {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #020202;
+}
+
+.info-intro {
+  font-size: 1rem;
+  color: #666;
+}
+
+@media (max-width: 800px) {
+  .info-box {
+    flex: 1 1 100%;
+  }
+}

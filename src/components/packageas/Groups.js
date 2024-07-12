@@ -11,7 +11,7 @@ const Groups = () => {
       description:
         "The Labuan Bajo Open Trip offers a unique adventure through the pristine islands of Komodo National Park, featuring stunning beaches, clear blue waters, and the famous Komodo dragons.",
       buttonText: "Find partner",
-      buttonLink: "",
+      buttonLink: "/Trip-connect/groups/PeopleInfo",
     },
     {
       feature: "04 days 03 Nights",
@@ -19,7 +19,7 @@ const Groups = () => {
       description:
         "Experience the best of Bali with this trip, including visits to iconic temples, vibrant markets, and beautiful beaches. Enjoy a mix of culture, relaxation, and adventure.",
       buttonText: "Find partner",
-      buttonLink: "",
+      buttonLink: "/Trip-connect/groups/PeopleInfo",
     },
     {
       feature: "04 days 03 Nights",
@@ -27,7 +27,7 @@ const Groups = () => {
       description:
         "Discover the rich history and culture of Yogyakarta with visits to the ancient temples of Borobudur and Prambanan, the Sultan's Palace, and local markets.",
       buttonText: "Find partner",
-      buttonLink: "",
+      buttonLink: "/Trip-connect/groups/PeopleInfo",
     },
     {
       feature: "04 days 03 Nights",
@@ -35,7 +35,7 @@ const Groups = () => {
       description:
         "Explore the natural beauty of Lombok with its stunning beaches, waterfalls, and the iconic Mount Rinjani. Perfect for nature lovers and adventure seekers.",
       buttonText: "Find partner",
-      buttonLink: "",
+      buttonLink: "/Trip-connect/groups/PeopleInfo",
     },
     {
       feature: "04 days 03 Nights",
@@ -43,7 +43,7 @@ const Groups = () => {
       description:
         "Dive into the bustling city life of Jakarta with visits to historical landmarks, vibrant shopping districts, and a taste of local cuisine. A perfect blend of modern and traditional experiences.",
       buttonText: "Find partner",
-      buttonLink: "",
+      buttonLink: "/Trip-connect/groups/PeopleInfo",
     },
     {
       feature: "04 days 03 Nights",
@@ -51,7 +51,7 @@ const Groups = () => {
       description:
         "Escape to the cool highlands of Bandung, known for its scenic landscapes, tea plantations, and colonial architecture. Ideal for a relaxing and refreshing getaway.",
       buttonText: "Find partner",
-      buttonLink: "",
+      buttonLink: "/Trip-connect/groups/PeopleInfo",
     },
   ];
 

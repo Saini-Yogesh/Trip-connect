@@ -11,7 +11,7 @@ const Packageas = () => {
       description:
         "Create your profile to connect, share, and plan trips with fellow travelers.",
       buttonText: "Sign Up",
-      buttonLink: "",
+      buttonLink: "/Trip-connect/signup",
     },
     {
       feature: "Search & Filter Trips",
@@ -19,7 +19,7 @@ const Packageas = () => {
       description:
         "Easily search and filter trips by destination, dates, budget, and more.",
       buttonText: "Search Now",
-      buttonLink: "",
+      buttonLink: "/Trip-connect/trips",
     },
     {
       feature: "Travel Blogs & Photos",
@@ -27,7 +27,7 @@ const Packageas = () => {
       description:
         "Write blogs, post photos, and read reviews to enrich your travel experience.",
       buttonText: "Explore blog",
-      buttonLink: "",
+      buttonLink: "/Trip-connect/connect",
     },
   ];
 

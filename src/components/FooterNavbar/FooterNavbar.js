@@ -20,7 +20,7 @@ const FooterNavbar = () => {
                 journeys with TripConnect.
               </p>
               <button className="footer-container1-join-now-button">
-                <a href="/" className="no-outline-footer">
+                <a href="/Trip-connect/register" className="no-outline-footer">
                   Join Now
                 </a>
               </button>
@@ -31,15 +31,18 @@ const FooterNavbar = () => {
             <div className="footer-container2-part">
               <div className="footer-container2-part1">
                 <p className="footer-container2-part1-text1">
-                  <a href="/" className="no-outline-footer">
+                  <a href="/Trip-connect" className="no-outline-footer">
                     TripConnect
                   </a>
                 </p>
                 <p className="footer-container2-part1-text2">
-                  Connect. Plan. Explore Together.
+                  Connect, Plan, Explore Together.
                 </p>
                 <button className="footer-container2-part1-Join-Now-button">
-                  <a href="/" className="no-outline-footer">
+                  <a
+                    href="/Trip-connect/register"
+                    className="no-outline-footer"
+                  >
                     Join Now
                   </a>
                 </button>
@@ -75,6 +78,9 @@ const FooterNavbar = () => {
           {/* copy rights  */}
           <div className="footer-container3">
             © 2024 TripConnect, we love our users!
+            <i>
+              <b> desigied and built by Yogesh</b>
+            </i>
           </div>
         </div>
       </footer>

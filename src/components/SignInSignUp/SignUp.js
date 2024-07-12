@@ -1,7 +1,11 @@
 import React from "react";
 import "./SignInSignUpCSS.css";
+import { useNavigate } from "react-router-dom";
+import FooterNavbar from "../FooterNavbar/FooterNavbar";
 
 const SignUp = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="main-signINUP">
@@ -12,7 +16,13 @@ const SignUp = () => {
               <h3 className="Sign-in-With-ID-Passowrd">
                 Sign in With ID & Passowrd
               </h3>
-              <button className="signIn-button" id="login">
+              <button
+                className="signIn-button"
+                id="login"
+                onClick={() => {
+                  navigate("/Trip-connect/signin");
+                }}
+              >
                 Sign In here
               </button>
             </div>
@@ -69,11 +79,19 @@ const SignUp = () => {
                 placeholder="Re-Enter Password"
                 required
               />
-              <button className="signUp-button">Sign Up</button>
+              <button
+                className="signUp-button"
+                onClick={() => {
+                  navigate("/Trip-connect");
+                }}
+              >
+                Sign Up
+              </button>
             </form>
           </div>
         </div>
       </div>
+      <FooterNavbar />
     </>
   );
 };

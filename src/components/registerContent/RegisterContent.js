@@ -19,12 +19,12 @@ const RegisterContent = () => {
             </p>
             <div className="registerMain-container-buttons">
               <button className="registerMain-container-button1">
-                <a href="SignUp.html" className="no-outline-main1">
+                <a href="/Trip-connect/signup" className="no-outline-main1">
                   Sign Up
                 </a>
               </button>
               <button className="registerMain-container-button2">
-                <a href="SignIn.html" className="no-outline-main2">
+                <a href="/Trip-connect/signIn" className="no-outline-main2">
                   Sign In
                 </a>
               </button>

@@ -1,11 +1,10 @@
 .main-signINUP {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #219c90;
+  margin-top: 15vmin;
 }
 .SignUpIn-page {
+  margin: 2vmin;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -16,7 +15,6 @@
 .part1,
 .part2 {
   width: 55vmin;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,7 +27,7 @@
   background-color: green;
 }
 .part2 {
-  background-color: #fff;
+  background-color: #f6dfdf;
 }
 .welcome-text,
 .Sign-in-text {
@@ -55,7 +53,6 @@
   cursor: pointer;
 }
 .login-form {
-  background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,7 +90,8 @@
   text-decoration: none;
   font-size: 3vmin;
   margin: 1vmin;
-  border: 0.1vmin solid #ccc;
+  background-color: white;
+  border: 0.1vmin solid black;
   border-radius: 20%;
   display: inline-flex;
   justify-content: center;

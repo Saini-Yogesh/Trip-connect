@@ -17,26 +17,31 @@ const Navbar = (props) => {
               </Link>
             </p>
             <p className="Register main-links-style">
-              <Link to="/register" className="no-outline-navbar">
+              <Link to="/Trip-connect/register" className="no-outline-navbar">
                 Register
               </Link>
             </p>
             <p className="Trips main-links-style">
-              <Link to="/trips" className="no-outline-navbar">
+              <Link to="/Trip-connect/trips" className="no-outline-navbar">
                 Trips
               </Link>
             </p>
             <p className="Groups main-links-style">
-              <Link to="/groups" className="no-outline-navbar">
+              <Link to="/Trip-connect/groups" className="no-outline-navbar">
                 Groups
               </Link>
             </p>
             <p className="Social main-links-style">
-              <Link to="/connect" className="no-outline-navbar">
+              <Link to="/Trip-connect/connect" className="no-outline-navbar">
                 Connect
               </Link>
             </p>
-            <Link to="/signIn">
+            <p className="Social main-links-style">
+              <Link to="/Trip-connect/Reviews" className="no-outline-navbar">
+                Reviews
+              </Link>
+            </p>
+            <Link to="/Trip-connect/signIn">
               <button className="Join-now-button">SignIn/SignUp</button>
             </Link>
           </div>

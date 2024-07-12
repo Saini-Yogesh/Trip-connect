@@ -1,0 +1,76 @@
+.review-section {
+  padding: 15vmin;
+  background-color: #000000;
+  text-align: center;
+}
+
+.section-heading {
+  color: white;
+  font-size: 7vmin;
+  margin: 2rem;
+}
+
+.reviews-container {
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.review-box {
+  flex: 1 1 25%;
+  color: white;
+  background-color: #1f1e1e;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 40vmin;
+}
+
+.review-date {
+  font-size: 1rem;
+  color: #dbc4c4;
+  margin-bottom: 1rem;
+}
+
+.review-heading {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.review-text {
+  font-size: 1rem;
+  color: #dbc4c4;
+  margin-bottom: 1rem;
+}
+.Line-for-seprarion {
+  border-bottom: solid 0.2vmin #dbc4c4;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+.reviewer-name {
+  font-size: 1.3rem;
+  color: white;
+  text-align: right;
+}
+
+@media (max-width: 1200px) {
+  .review-box {
+    flex: 1 1 40%; /* 2 items per row on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .review-box {
+    flex: 1 1 100%; /* 1 item per row on small screens */
+  }
+  .reviews-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,8 +1,10 @@
 import React from "react";
 import "./AboutGroupCSS.css";
+import { useNavigate } from "react-router-dom";
 
 const AboutGroup1 = (props) => {
-  const { feature, heading, description, buttonText } = props;
+  const navigate = useNavigate();
+  const { feature, heading, description, buttonText, buttonLink } = props;
   return (
     <>
       <div className="Packageas-container">
@@ -15,7 +17,12 @@ const AboutGroup1 = (props) => {
         </div>
         <div className="Packageas-container-button">
           <p className="Packageas-container-button-text1">{description}</p>
-          <button className="Packageas-container-Book-Now-button">
+          <button
+            className="Packageas-container-Book-Now-button"
+            onClick={() => {
+              navigate(buttonLink);
+            }}
+          >
             {buttonText}
           </button>
         </div>
