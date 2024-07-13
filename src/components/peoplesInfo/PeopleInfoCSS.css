@@ -10,7 +10,7 @@
 
 .rows {
   width: 80%;
-  margin: 0 auto;
+  margin: 1rem auto;
   border: 1px solid #ddd;
   border-radius: 4px;
 }

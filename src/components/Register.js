@@ -1,5 +1,4 @@
 import React from "react";
-import FooterNavbar from "./FooterNavbar/FooterNavbar";
 import RegisterContent from "./registerContent/RegisterContent";
 
 const Register = () => {
@@ -33,7 +32,6 @@ const Register = () => {
         Link1={Link1}
         Link2={Link2}
       />
-      <FooterNavbar />
     </>
   );
 };

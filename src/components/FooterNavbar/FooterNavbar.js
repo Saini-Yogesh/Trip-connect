@@ -1,7 +1,9 @@
 import React from "react";
 import "./FooterNavbarCSS.css";
+import { useNavigate } from "react-router-dom";
 
 const FooterNavbar = () => {
+  const navigate = useNavigate();
   return (
     <>
       <footer>
@@ -19,10 +21,13 @@ const FooterNavbar = () => {
               <p className="footer-container1-text2">
                 journeys with TripConnect.
               </p>
-              <button className="footer-container1-join-now-button">
-                <a href="/Trip-connect/register" className="no-outline-footer">
-                  Join Now
-                </a>
+              <button
+                className="footer-container1-join-now-button"
+                onClick={() => {
+                  navigate("/Trip-connect/register");
+                }}
+              >
+                Join Now
               </button>
             </div>
           </div>
@@ -38,13 +43,13 @@ const FooterNavbar = () => {
                 <p className="footer-container2-part1-text2">
                   Connect, Plan, Explore Together.
                 </p>
-                <button className="footer-container2-part1-Join-Now-button">
-                  <a
-                    href="/Trip-connect/register"
-                    className="no-outline-footer"
-                  >
-                    Join Now
-                  </a>
+                <button
+                  className="footer-container2-part1-Join-Now-button"
+                  onClick={() => {
+                    navigate("/Trip-connect/register");
+                  }}
+                >
+                  Join Now
                 </button>
               </div>
               <div className="footer-container2-part2">

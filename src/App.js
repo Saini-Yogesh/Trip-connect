@@ -13,6 +13,7 @@ import SignIn from "./components/SignInSignUp/SignIn";
 import SignUp from "./components/SignInSignUp/SignUp";
 import ContactInfo from "./components/peoplesInfo/PeopleInfo";
 import ReviewSection from "./components/Review/ReviewSection";
+import FooterNavbar from "./components/FooterNavbar/FooterNavbar";
 
 const AppContent = () => {
   useScrollToTop();
@@ -21,7 +22,7 @@ const AppContent = () => {
     return path === "/" || path === "/Trip-connect" ? "" : "#1c2534";
   };
   return (
-    <>
+    <>  
       <Navbar backGroundColor={getBackgroundColor(location.pathname)} />
       <Routes>
         <Route exact path="/Trip-connect" element={<Home />} />
@@ -44,6 +45,7 @@ const AppContent = () => {
           element={<ContactInfo />}
         />
       </Routes>
+      <FooterNavbar />
     </>
   );
 };

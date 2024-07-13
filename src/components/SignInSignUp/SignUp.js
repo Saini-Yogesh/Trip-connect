@@ -1,7 +1,6 @@
 import React from "react";
 import "./SignInSignUpCSS.css";
 import { useNavigate } from "react-router-dom";
-import FooterNavbar from "../FooterNavbar/FooterNavbar";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -31,13 +30,13 @@ const SignUp = () => {
             <form className="login-form">
               <p className="Sign-in-text">Create Account</p>
               <div className="social-icons">
-                <a href="/" className="icons">
+                <a href="/Trip-connect" className="icons">
                   <i className="fa-brands fa-google"></i>
                 </a>
-                <a href="/" className="icons">
+                <a href="/Trip-connect" className="icons">
                   <i className="fa-brands fa-facebook"></i>
                 </a>
-                <a href="/" className="icons">
+                <a href="/Trip-connect" className="icons">
                   <i className="fa-brands fa-square-x-twitter"></i>
                 </a>
               </div>
@@ -91,7 +90,6 @@ const SignUp = () => {
           </div>
         </div>
       </div>
-      <FooterNavbar />
     </>
   );
 };

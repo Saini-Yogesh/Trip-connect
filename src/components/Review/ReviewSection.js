@@ -4,7 +4,6 @@ import Discoverbenifites from "./Discoverbenifites";
 import ReviewsRatingUsers from "./ReviewsRatingUsers";
 import OurPassionateTravel from "./OurPassionateTravel";
 import AllReview from "./AllReview";
-import FooterNavbar from "../FooterNavbar/FooterNavbar";
 import SubmitReviesw from "./SubmitReviesw";
 
 const ReviewSection = () => {
@@ -16,7 +15,6 @@ const ReviewSection = () => {
       <OurPassionateTravel />
       <AllReview />
       <SubmitReviesw />
-      <FooterNavbar />
     </>
   );
 };

@@ -12,7 +12,7 @@ const Navbar = (props) => {
         >
           <div className="header-links">
             <p className="Name">
-              <Link to="/" className="no-outline-navbar">
+              <Link to="/Trip-connect" className="no-outline-navbar">
                 TripConnect
               </Link>
             </p>

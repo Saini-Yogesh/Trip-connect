@@ -8,8 +8,11 @@ const PersonRow = (props) => {
         style={{
           display: "flex",
           justifyContent: "space-between",
-          padding: "10px",
-          borderBottom: "1px solid #ddd",
+          borderBottom: "1px solid black",
+          alignItems: "center",
+          flexWrap: "wrap",
+          padding: "1rem",
+          minHeight: "5vmin",
         }}
       >
         <div>{name}</div>
