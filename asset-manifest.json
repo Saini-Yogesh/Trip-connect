@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Trip-connect/static/css/main.05c4c226.css",
-    "main.js": "/Trip-connect/static/js/main.52a1ef8e.js",
+    "main.css": "/Trip-connect/static/css/main.09b6fbef.css",
+    "main.js": "/Trip-connect/static/js/main.f9709f10.js",
     "static/js/453.b16ac5c2.chunk.js": "/Trip-connect/static/js/453.b16ac5c2.chunk.js",
     "static/media/trips-img1.jpg": "/Trip-connect/static/media/trips-img1.7a9f01d3378f7b713fb4.jpg",
     "static/media/trips-img2.jpg": "/Trip-connect/static/media/trips-img2.3ba09913030f8ca63b26.jpg",
@@ -24,12 +24,12 @@
     "static/media/gallary-img4.jpg": "/Trip-connect/static/media/gallary-img4.39064cda612f29bd9845.jpg",
     "static/media/gallary-img5.jpg": "/Trip-connect/static/media/gallary-img5.5efa2644aa756ec3b129.jpg",
     "index.html": "/Trip-connect/index.html",
-    "main.05c4c226.css.map": "/Trip-connect/static/css/main.05c4c226.css.map",
-    "main.52a1ef8e.js.map": "/Trip-connect/static/js/main.52a1ef8e.js.map",
+    "main.09b6fbef.css.map": "/Trip-connect/static/css/main.09b6fbef.css.map",
+    "main.f9709f10.js.map": "/Trip-connect/static/js/main.f9709f10.js.map",
     "453.b16ac5c2.chunk.js.map": "/Trip-connect/static/js/453.b16ac5c2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.05c4c226.css",
-    "static/js/main.52a1ef8e.js"
+    "static/css/main.09b6fbef.css",
+    "static/js/main.f9709f10.js"
   ]
 }
