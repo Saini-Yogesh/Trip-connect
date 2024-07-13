@@ -16,7 +16,6 @@
   border-radius: 2vmin;
   object-fit: cover;
 }
-
 /* part 2 */
 .review-section-hero-title {
   font-size: 10vmin;
@@ -36,20 +35,21 @@
   font-size: 6vmin;
   margin: 0 0 2vmin 5px;
 }
-
 .review-section-icon-text img {
   width: 50px;
   height: 50px;
   margin-bottom: 10px;
 }
-
 .review-section-hero-buttons {
   padding-top: 4vmin;
   display: flex;
   justify-content: center;
   gap: 3vmin;
 }
-
+.review-section-button a {
+  text-decoration: none;
+  color: white;
+}
 .review-section-button {
   padding: 2vmin 4vmin 2vmin 4vmin;
   font-size: 2.2vmin;
@@ -58,17 +58,16 @@
   min-height: 7vmin;
   border-radius: 2vmin;
 }
-
-.review-section-primary-button {
+.review-section-button:hover {
+  background-color: #0056b3;
   color: white;
+}
+.review-section-primary-button {
   background-color: #007bff;
 }
-
 .review-section-secondary-button {
-  color: #007bff;
   background-color: #1c2534;
 }
-
 @media (max-width: 1050px) {
   .review-section-hero-section {
     flex-direction: column;
@@ -89,7 +88,5 @@
     height: auto;
     width: 100%;
     margin-top: 3vmin;
-    /* border-radius: 2vmin; */
-    /* object-fit: cover; */
   }
 }

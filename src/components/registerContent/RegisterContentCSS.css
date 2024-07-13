@@ -1,5 +1,6 @@
 .registerMain {
-  background-color: #002e33;
+  padding-top: 15vmin;
+  background-color: #1c2534;
 }
 .registerMain-container {
   display: flex;
@@ -43,24 +44,25 @@
 }
 .registerMain-container-button1,
 .registerMain-container-button2 {
-  width: 20vmin;
+  min-width: 20vmin;
   height: 7vmin;
   font-size: 2.5vmin;
-  border-radius: 5vmin;
-  padding: 1vmin;
+  border-radius: 2vmin;
+  padding: 1vmin 5vmin;
   margin: 2vmin;
   font-weight: 500;
   cursor: pointer;
 }
 .registerMain-container-button1 {
-  color: black;
-  background-color: #6ebb2d;
+  color: white;
+  background-color: #0056b3;
   border: none;
 }
 .registerMain-container-button2 {
+  color: #0056b3;
   background-color: none;
-  border: solid white 0.2vmin;
-  background-color: #002e33;
+  border: solid #0056b3 0.2vmin;
+  background-color: #1c2534;
 }
 .no-outline-main1 {
   text-decoration: none;
@@ -76,6 +78,7 @@
   justify-content: center;
   align-items: center;
   font-size: 5vmin;
+  gap: 4vmin;
 }
 .users,
 .Countries,
@@ -84,7 +87,7 @@
   flex-direction: column;
   justify-content: center;
   height: 20vmin;
-  width: 23vmin;
+  width: 20vmin;
   gap: 2vmin;
 }
 .Ratingtext,

@@ -1,0 +1,97 @@
+.submit-review-section {
+  text-align: center;
+  padding: 5vmin 20vmin;
+  color: white;
+  background-color: #333;
+}
+
+.submit-review-content {
+  border-radius: 5vmin;
+  background-color: #007bff;
+  padding: 10vmin;
+}
+
+.submit-review-section-heading {
+  font-size: 2.5rem;
+  margin-bottom: 2vmin;
+  color: #333;
+}
+
+.submit-review-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submit-review-form-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 1.5vmin;
+  width: 100%;
+  max-width: 800px;
+  padding: 1vmin;
+}
+
+.submit-review-form-group {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.submit-review-label {
+  text-align: left;
+  font-size: 1rem;
+  padding: 1vmin;
+}
+.submit-review-input {
+  border-radius: 2vmin;
+  padding: 2vmin;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  width: 100%;
+}
+.submit-review-form-row textarea {
+  border-radius: 2vmin;
+  padding: 2vmin;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  width: 90%;
+}
+textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.submit-review-button {
+  padding: 2vmin 5vmin;
+  font-size: 1.2rem;
+  color: black;
+  background-color: white;
+  border: none;
+  border-radius: 2vmin;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.submit-review-button:hover {
+  color: white;
+  background-color: #0056b3;
+}
+
+@media (max-width: 1000px) {
+  .submit-review-form-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 2vmin;
+  }
+
+  .submit-review-form-group {
+    width: 90%;
+  }
+  .submit-review-section {
+    padding: 5vmin;
+  }
+}

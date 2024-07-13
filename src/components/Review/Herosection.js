@@ -38,10 +38,12 @@ const Herosection = () => {
           </div>
           <div className="review-section-hero-buttons">
             <button className="review-section-button review-section-primary-button">
-              Share Your Review
+              <a href="#ShareYourreview"> Share Your Review</a>
             </button>
             <button className="review-section-button review-section-secondary-button">
-              Read Now <i className="fa-solid fa-arrow-right"></i>
+              <a href="#ReadReview">
+                Read Now <i className="fa-solid fa-arrow-right"></i>
+              </a>
             </button>
           </div>
         </div>

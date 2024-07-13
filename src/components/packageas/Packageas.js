@@ -27,7 +27,7 @@ const Packageas = () => {
       description:
         "Write blogs, post photos, and read reviews to enrich your travel experience.",
       buttonText: "Explore blog",
-      buttonLink: "/Trip-connect/connect",
+      buttonLink: "/Trip-connect/Reviews",
     },
   ];
 

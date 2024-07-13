@@ -84,6 +84,7 @@ const AllReview = () => {
 
   return (
     <div
+      id="ReadReview"
       className="review-section"
       style={{ backgroundImage: `url(${backgroundShadow})` }}
     >
