@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SignInSignUpCSS.css";
 import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate("/Trip-connect");
+  };
 
   return (
     <>
@@ -25,7 +32,7 @@ const SignIn = () => {
             </div>
           </div>
           <div className="part2">
-            <form className="login-form">
+            <form className="login-form" onSubmit={handleSubmit}>
               <p className="Sign-in-text">Sign In</p>
               <div className="social-icons">
                 <a href="/Trip-connect" className="icons">
@@ -45,23 +52,22 @@ const SignIn = () => {
                 className="login-input"
                 type="email"
                 placeholder="Enter E-mail"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
               <input
                 className="login-input"
                 type="password"
                 placeholder="Enter Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 required
               />
               <a href="/Trip-connect/signin" className="forget-password">
                 Forget Password?
               </a>
-              <button
-                className="signIn-button"
-                onClick={() => {
-                  navigate("/Trip-connect");
-                }}
-              >
+              <button className="signIn-button" type="submit">
                 Sign In
               </button>
             </form>

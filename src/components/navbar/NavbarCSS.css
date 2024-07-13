@@ -2,49 +2,98 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 92.5%;
   z-index: 11;
   display: flex;
-  justify-content: center;
-  align-content: center;
+  justify-content: space-between;
+  align-items: center;
   height: 15vmin;
   color: white;
   z-index: 10;
+  padding-left: 7.5%;
 }
+
 .header-links {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  width: 85%;
+  width: 90%;
 }
+
 .Name {
   font-size: 4vmin;
   padding: 1vmin;
-  width: 50%;
   font-weight: 800;
 }
+
+.menu-links,
+.menu-link-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1vmin;
+}
+
 .main-links-style {
   text-align: center;
   font-size: 2.5vmin;
-  width: 10vmin;
   padding: 1vmin;
-  gap: 1vmin;
 }
+
 .no-outline-navbar {
   text-decoration: none;
   border: none;
   outline: none;
   color: white;
 }
+
 .Join-now-button {
   border: none;
   background-color: #6ebb2d;
   border-radius: 5vmin;
-  width: 40vmin;
   height: 7vmin;
   font-size: 2.5vmin;
-  padding: 1vmin;
+  padding: 1vmin 5vmin;
   cursor: pointer;
   color: white;
+}
+
+.menu-icon {
+  font-size: 4vmin;
   cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .menu-links {
+    flex-direction: column;
+    position: absolute;
+    top: 12vmin;
+    right: 3vmin;
+    width: 30%;
+    background-color: #333;
+    display: none;
+  }
+  .menu-link-section {
+    flex-direction: column;
+    width: 100%;
+  }
+  .menu-link-section :hover {
+    background-color: rgb(94, 102, 170);
+  }
+  .menu-links.open {
+    display: flex;
+  }
+  .main-links-style {
+    width: 100%;
+    text-align: center;
+    padding: 2vmin 0;
+  }
+  .Join-now-button {
+    width: 100%;
+    margin: 2vmin 0;
+  }
+  .menu-icon {
+    display: block;
+  }
 }

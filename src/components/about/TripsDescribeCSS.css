@@ -26,6 +26,9 @@
   flex-wrap: wrap;
   gap: 2rem;
 }
+.TripsDescribePart-buttons :hover {
+  background-color: #2dc119;
+}
 .TripsDescribePart-button1 {
   margin-right: 2vmin;
   padding: 2vmin;
