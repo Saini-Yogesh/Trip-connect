@@ -19,6 +19,7 @@ const AppContent = () => {
   useScrollToTop();
   const location = useLocation();
   const getBackgroundColor = (path) => {
+    console.log(path);
     return path === "/Trip-connect/" || path === "/Trip-connect"
       ? ""
       : "#1c2534";
