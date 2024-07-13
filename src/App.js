@@ -19,10 +19,13 @@ const AppContent = () => {
   useScrollToTop();
   const location = useLocation();
   const getBackgroundColor = (path) => {
-    return path === "/" || path === "/Trip-connect" ? "" : "#1c2534";
+    console.log(path);
+    return path === "/Trip-connect/" || path === "/Trip-connect"
+      ? ""
+      : "#1c2534";
   };
   return (
-    <>  
+    <>
       <Navbar backGroundColor={getBackgroundColor(location.pathname)} />
       <Routes>
         <Route exact path="/Trip-connect" element={<Home />} />
