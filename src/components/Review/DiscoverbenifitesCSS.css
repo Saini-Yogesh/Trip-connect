@@ -4,12 +4,15 @@
   font-weight: 700;
 }
 
+.main-info-section {
+  text-align: center;
+  background-color: #1c2534;
+}
 .info-section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 2rem 2rem 0 2rem;
-  background-color: #1c2534;
 }
 
 .info-box {

@@ -23,11 +23,10 @@
   width: 4vw;
   height: 4vw;
   border-radius: 50%;
-  /* margin-bottom: 1rem; */
 }
 .review-text {
   font-size: 3vmin;
-  height: 7vmin;
+  min-height: 7vmin;
 }
 .review-img-box {
   display: flex;
@@ -62,7 +61,6 @@
   }
   .review-text {
     font-size: 2.5vmin;
-    height: 8vmin;
   }
   .review-img-box {
     height: 12vmin;
@@ -94,7 +92,6 @@
   }
   .review-text {
     font-size: 2vmin;
-    height: 9vmin;
   }
   .review-img-box {
     height: 10vmin;

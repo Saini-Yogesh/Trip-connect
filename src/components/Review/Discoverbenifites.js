@@ -30,7 +30,7 @@ const Discoverbenifites = () => {
   ];
   return (
     <>
-      <div className="info-section">
+      <div className="main-info-section">
         <p className="Discover-Benefits-Text">Discover Benefits</p>
         <div className="info-section">
           {infos.map((info) => (
