@@ -84,7 +84,7 @@ const FooterNavbar = () => {
           <div className="footer-container3">
             © 2024 TripConnect, we love our users!
             <i>
-              <b> desigied and built by Yogesh</b>
+              <b> Designed and built by Yogesh</b>
             </i>
           </div>
         </div>

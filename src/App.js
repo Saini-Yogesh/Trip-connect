@@ -14,6 +14,7 @@ import SignUp from "./components/SignInSignUp/SignUp";
 import ContactInfo from "./components/peoplesInfo/PeopleInfo";
 import ReviewSection from "./components/Review/ReviewSection";
 import FooterNavbar from "./components/FooterNavbar/FooterNavbar";
+import Profile from "./components/Profile";
 
 const AppContent = () => {
   useScrollToTop();
@@ -36,6 +37,7 @@ const AppContent = () => {
         <Route exact path="/Trip-connect/Reviews" element={<ReviewSection />} />
         <Route exact path="/Trip-connect/signIn" element={<SignIn />} />
         <Route exact path="/Trip-connect/signup" element={<SignUp />} />
+        <Route exact path="/Trip-connect/Profile" element={<Profile />} />
         <Route
           exact
           path="/Trip-connect/groups/PeopleInfo"
