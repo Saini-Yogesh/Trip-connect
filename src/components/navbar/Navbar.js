@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./NavbarCSS.css";
 import { Link } from "react-router-dom";
+import Profile from "./Profile";
 
 const Navbar = (props) => {
+  const menuRef = useRef(null); // Reference for the menu
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -13,13 +15,33 @@ const Navbar = (props) => {
     setIsMenuOpen(false);
   };
 
+  // Check login status from localStorage
+  // eslint-disable-next-line
+  const [loginStatus, setLoginStatus] = useState(
+    !!localStorage.getItem("authToken")
+  );
+
+  // Close menu on outside click
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        closeMenu();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <>
       <div
         className="header-block"
         style={{ backgroundColor: `${props.backGroundColor}` }}
       >
-        <div className="header-links">
+        <div className="header-links" ref={menuRef}>
           <p className="Name">
             <Link to="/Trip-connect" className="no-outline-navbar">
               TripConnect
@@ -53,9 +75,16 @@ const Navbar = (props) => {
                 </Link>
               </p>
             </div>
-            <Link to="/Trip-connect/signIn" onClick={closeMenu}>
-              <button className="Join-now-button">SignIn/SignUp</button>
-            </Link>
+
+            {loginStatus ? (
+              <Profile />
+            ) : (
+              <Link to="/Trip-connect/signIn">
+                <button className="Join-now-button" onClick={closeMenu}>
+                  SignIn/SignUp
+                </button>
+              </Link>
+            )}
           </div>
           <div className="menu-icon" onClick={toggleMenu}>
             &#9776;

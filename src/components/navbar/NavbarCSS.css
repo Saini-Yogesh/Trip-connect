@@ -38,6 +38,7 @@
   text-align: center;
   font-size: 2.5vmin;
   padding: 1vmin;
+  cursor: pointer;
 }
 
 .no-outline-navbar {
@@ -68,22 +69,38 @@
   box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.5);
 }
 
+.profile-section-profile-label {
+  font-size: 2.5vmin;
+  cursor: pointer;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 10vmin;
+  right: auto;
+  width: 10%;
+  background-color: #333;
+}
+.main-links-style.Logout:hover {
+  color: #ff5555;
+  font-weight: bold;
+}
+
+.main-links-style :hover {
+  font-weight: bolder;
+}
 @media (max-width: 1000px) {
   .menu-links {
     flex-direction: column;
     position: absolute;
     top: 12vmin;
-    right: 3vmin;
-    width: 30%;
+    right: 0px;
+    width: 25%;
     background-color: #333;
     display: none;
   }
   .menu-link-section {
     flex-direction: column;
     width: 100%;
-  }
-  .menu-link-section :hover {
-    background-color: rgb(94, 102, 170);
   }
   .menu-links.open {
     display: flex;
@@ -99,5 +116,10 @@
   }
   .menu-icon {
     display: block;
+  }
+  .dropdown-menu {
+    position: relative;
+    top: 0;
+    width: auto;
   }
 }
