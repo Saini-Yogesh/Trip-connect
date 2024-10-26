@@ -12,9 +12,11 @@ import Groups from "./components/Groups";
 import SignIn from "./components/SignInSignUp/SignIn";
 import SignUp from "./components/SignInSignUp/SignUp";
 import ContactInfo from "./components/peoplesInfo/PeopleInfo";
-import ReviewSection from "./components/Review/ReviewSection";
+import ReviewSection from "./components/ReviewSection";
 import FooterNavbar from "./components/FooterNavbar/FooterNavbar";
 import Profile from "./components/Profile";
+import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
+import NotFound from "./components/notFound/NotFound";
 
 const AppContent = () => {
   useScrollToTop();
@@ -29,7 +31,6 @@ const AppContent = () => {
       <Navbar backGroundColor={getBackgroundColor(location.pathname)} />
       <Routes>
         <Route exact path="/Trip-connect" element={<Home />} />
-        <Route exact path="/" element={<Home />} />
         <Route exact path="/Trip-connect/register" element={<Register />} />
         <Route exact path="/Trip-connect/trips" element={<Trips />} />
         <Route exact path="/Trip-connect/groups" element={<Groups />} />
@@ -48,8 +49,10 @@ const AppContent = () => {
           path="/Trip-connect/trips/PeopleInfo"
           element={<ContactInfo />}
         />
+        <Route path="*" element={<NotFound />} /> {/* Catch-all 404 route */}
       </Routes>
       <FooterNavbar />
+      <ScrollToTopButton />
     </>
   );
 };

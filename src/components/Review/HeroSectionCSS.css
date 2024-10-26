@@ -11,10 +11,11 @@
 }
 /* part 1 */
 .review-section-main-image {
-  height: 80vmin;
+  height: 70vmin;
   width: 20rem;
   border-radius: 2vmin;
   object-fit: cover;
+  object-position: left;
 }
 /* part 2 */
 .review-section-hero-title {
@@ -51,7 +52,7 @@
   color: white;
 }
 .review-section-button {
-  padding: 2vmin 4vmin 2vmin 4vmin;
+  padding: 0vmin 3vmin;
   font-size: 2.2vmin;
   border: none;
   cursor: pointer;
