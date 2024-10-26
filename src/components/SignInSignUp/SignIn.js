@@ -7,6 +7,7 @@ const SignIn = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [animation, setAnimation] = useState("form-slide-in");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,7 +22,7 @@ const SignIn = () => {
         return alert(response.result);
       }
       localStorage.setItem("authToken", response.token);
-      alert("User loged in");
+      alert("User logged in");
       navigate("/Trip-connect");
     } catch (err) {
       console.error("Error during sign-in");
@@ -32,7 +33,7 @@ const SignIn = () => {
     <>
       <div className="main-signINUP">
         <div className="main-signINUP-container">
-          <form className="login-form" onSubmit={handleSubmit}>
+          <form className={`login-form ${animation}`} onSubmit={handleSubmit}>
             <p className="Sign-in-text">Let's Start New Tour</p>
             <SignUpIcons />
             <p className="enter-email-password">Login With Email & Password</p>
@@ -56,7 +57,7 @@ const SignIn = () => {
               Sign In
             </button>
             <a href="/Trip-connect/signin" className="forget-password">
-              Forget Password?
+              Forgot Password?
             </a>
             <p className="already-registered-text">
               Haven't registered yet?

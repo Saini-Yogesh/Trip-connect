@@ -6,6 +6,7 @@ import SignUpIcons from "./loginIcons";
 const SignUp = () => {
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
+  const [animation, setAnimation] = useState("form-slide-in");
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -38,15 +39,24 @@ const SignUp = () => {
         );
         response = await response.json();
         if (!response.success) {
-          return alert("User alrady exists");
+          return alert("User already exists");
         }
         setStep(step + 1);
+        slidingAnimation();
       } catch (err) {
         console.error("Error checking email uniqueness", err);
       }
     } else {
       setStep(step + 1);
+      slidingAnimation();
     }
+  };
+
+  const slidingAnimation = () => {
+    setAnimation("form-slide-out");
+    setTimeout(() => {
+      setAnimation("form-slide-in");
+    }, 200);
   };
 
   const handleSubmit = async (e) => {
@@ -62,10 +72,7 @@ const SignUp = () => {
         return alert(response.result);
       }
       localStorage.setItem("authToken", response.token);
-      const token = localStorage.getItem("authToken");
-      console.log(token);
-
-      alert("user added");
+      alert("User added");
       navigate("/Trip-connect");
     } catch (err) {
       console.error("Error during sign-up");
@@ -76,7 +83,7 @@ const SignUp = () => {
     <div className="main-signINUP">
       <div className="main-signINUP-container">
         <form
-          className="login-form"
+          className={`login-form ${animation}`}
           onSubmit={step === 3 ? handleSubmit : handleNextStep}
         >
           <p className="Sign-in-text">Welcome To TripConnect</p>
