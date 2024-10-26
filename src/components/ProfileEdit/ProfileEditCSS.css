@@ -1,0 +1,123 @@
+.profile-edit-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 25%;
+  padding: 20px;
+  background-color: #f0f0f0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Edit-profile-image {
+  width: clamp(100px, 25vw, 280px);
+  height: clamp(100px, 25vw, 280px);
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 20px 0px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+}
+
+.Edit-prfile-button {
+  font-weight: 550;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.Edit-prfile-button:hover {
+  background-color: #0056b3;
+}
+.Edit-prfile-button-logout:hover {
+  background-color: red;
+}
+
+/* second colume*/
+.section-title {
+  text-align: center;
+  padding: 1vmin;
+}
+
+.edit-form-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  margin-left: 20px;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.edit-form-input,
+.edit-form-textarea,
+.edit-form-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.edit-form-textarea {
+  height: 100px;
+}
+
+.save-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.save-button:hover {
+  background-color: #218838;
+}
+
+@media (max-width: 1000px) {
+  .profile-edit-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 0px;
+    margin-bottom: 20px;
+  }
+
+  .edit-form-content {
+    margin: 0px;
+  }
+
+  .options {
+    flex-direction: row;
+  }
+}

@@ -1,7 +1,9 @@
 import React from "react";
 import "./Profile.css";
+import { useNavigate } from "react-router-dom";
 
 const ProfileDetails = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="first-column">
@@ -21,10 +23,17 @@ const ProfileDetails = () => {
           <div className="profile-info">
             <p>
               <b>Yogesh Saini</b> (He/Him/his)
-            </p>  
+            </p>
             <p>@yogesh_1___</p>
             <p>
               <i className="fa-solid fa-location-dot"></i> Rajasthan
+            </p>
+            <p
+              onClick={() => navigate("/Trip-connect/profile/edit")}
+              className="profile-edit-button"
+            >
+              <i className="fa-solid fa-pen-to-square"></i> Complete Your
+              Profile
             </p>
           </div>
         </div>

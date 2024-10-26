@@ -14,9 +14,10 @@ import SignUp from "./components/SignInSignUp/SignUp";
 import ContactInfo from "./components/peoplesInfo/PeopleInfo";
 import ReviewSection from "./components/ReviewSection";
 import FooterNavbar from "./components/FooterNavbar/FooterNavbar";
-import Profile from "./components/Profile";
+import Profile from "./components/profile/Profile";
 import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
 import NotFound from "./components/notFound/NotFound";
+import ProfileEdit from "./components/ProfileEdit/profileEdit";
 
 const AppContent = () => {
   useScrollToTop();
@@ -35,19 +36,24 @@ const AppContent = () => {
         <Route exact path="/Trip-connect/trips" element={<Trips />} />
         <Route exact path="/Trip-connect/groups" element={<Groups />} />
         <Route exact path="/Trip-connect/connect" element={<Connect />} />
-        <Route exact path="/Trip-connect/Reviews" element={<ReviewSection />} />
+        <Route exact path="/Trip-connect/reviews" element={<ReviewSection />} />
         <Route exact path="/Trip-connect/signIn" element={<SignIn />} />
         <Route exact path="/Trip-connect/signup" element={<SignUp />} />
-        <Route exact path="/Trip-connect/Profile" element={<Profile />} />
+        <Route exact path="/Trip-connect/profile" element={<Profile />} />
         <Route
           exact
-          path="/Trip-connect/groups/PeopleInfo"
+          path="/Trip-connect/groups/peopleInfo"
           element={<ContactInfo />}
         />
         <Route
           exact
-          path="/Trip-connect/trips/PeopleInfo"
+          path="/Trip-connect/trips/peopleInfo"
           element={<ContactInfo />}
+        />
+        <Route
+          exact
+          path="/Trip-connect/profile/edit"
+          element={<ProfileEdit />}
         />
         <Route path="*" element={<NotFound />} /> {/* Catch-all 404 route */}
       </Routes>
