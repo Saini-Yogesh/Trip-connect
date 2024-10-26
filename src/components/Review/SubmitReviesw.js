@@ -5,9 +5,7 @@ import "./SubmitRevieswCSS.css";
 const SubmitReviesw = () => {
   const [formData, setFormData] = useState({
     name: "",
-    company: "",
     email: "",
-    contact: "",
     review: "",
   });
 
@@ -16,16 +14,24 @@ const SubmitReviesw = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    let response = await fetch("http://localhost:5000/api/review", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" }, // Corrected typo here
+      body: JSON.stringify(formData),
+    });
+    response = await response.json();
+
+    if (!response.success) return alert(response.error);
+
     setFormData({
       name: "",
-      company: "",
       email: "",
-      contact: "",
       review: "",
     });
-    alert("Successfully submited");
+    alert("Successfully submitted");
   };
 
   return (
@@ -38,7 +44,7 @@ const SubmitReviesw = () => {
           <div className="submit-review-form-row">
             <div className="submit-review-form-group">
               <label htmlFor="name" className="submit-review-label">
-                Name
+                Name<sup>*</sup>
               </label>
               <input
                 placeholder="Your name"
@@ -52,25 +58,8 @@ const SubmitReviesw = () => {
               />
             </div>
             <div className="submit-review-form-group">
-              <label htmlFor="company" className="submit-review-label">
-                Company
-              </label>
-              <input
-                placeholder="Your company"
-                className="submit-review-input"
-                type="text"
-                id="submit-review-company"
-                name="company"
-                value={formData.company}
-                onChange={handleChange}
-                required
-              />
-            </div>
-          </div>
-          <div className="submit-review-form-row">
-            <div className="submit-review-form-group">
               <label htmlFor="email" className="submit-review-label">
-                Email
+                Email<sup>*</sup>
               </label>
               <input
                 placeholder="Your email"
@@ -83,25 +72,10 @@ const SubmitReviesw = () => {
                 required
               />
             </div>
-            <div className="submit-review-form-group">
-              <label htmlFor="contact" className="submit-review-label">
-                Phone
-              </label>
-              <input
-                placeholder="Your phone"
-                className="submit-review-input"
-                type="text"
-                id="submit-review-contact"
-                name="contact"
-                value={formData.contact}
-                onChange={handleChange}
-                required
-              />
-            </div>
           </div>
           <div className="submit-review-form-row">
             <label htmlFor="review" className="submit-review-label">
-              Write your review...
+              Write your review<sup>*</sup>
             </label>
             <textarea
               placeholder="Share your valuable review here....."
