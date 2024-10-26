@@ -1,47 +1,94 @@
 import React from "react";
 import "./ConnectContentCSS.css";
+import { useState } from "react";
 
 const ConnectContent = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleOnSubmit = async (e) => {
+    e.preventDefault();
+
+    let response = await fetch("http://localhost:5000/api/contactUs", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+    response = await response.json();
+
+    if (!response.success) return alert(response.error);
+
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+    alert("Successfully submitted");
+  };
   return (
     <>
       <main>
         <div className="contactForm">
-          <form className="contact-form">
+          <div className="contact-form">
             <p>Contact us</p>
             <h4>Our friendly team would love to hear from you.</h4>
             <label className="name-text" htmlFor="name">
-              Name:
+              Name<sup>*</sup>
             </label>
-            <input type="text" id="name" name="name" required minLength={3} />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              minLength={2}
+            />
             <label className="email-text" htmlFor="email">
-              Email:
+              Email<sup>*</sup>
             </label>
-            <input type="email" id="email" name="email" required />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
             <label className="massage-text" htmlFor="message">
-              Message:
+              Message<sup>*</sup>
             </label>
             <textarea
               id="message"
               name="message"
-              placeholder="Type your massage...."
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Type your message...."
               required
               minLength={10}
             ></textarea>
-            <div className="chekbox-Text">
-              <input type="checkbox" id="terms" name="terms" required />
-              <label className="terms-text" htmlFor="terms">
-                Terms and Conditions
-              </label>
-            </div>
-            <input className="submit-button" type="submit" value="Submit" />
-          </form>
+            <button className="submit-button" onClick={handleOnSubmit}>
+              Submit
+            </button>
+          </div>
         </div>
         <div className="contactinfo">
           <div className="contactinfo-box">
             <p className="main-contact-icons">
               <i className="fas fa-mail-bulk"></i>
             </p>
-            <p className="contactinfo-text1">Email</p>
+            <p className="contactinfo-text1">Emails</p>
             <p className="contactinfo-text2">hello@tripconnect.com</p>
             <p className="contactinfo-text2">info@tripconnect.com</p>
           </div>

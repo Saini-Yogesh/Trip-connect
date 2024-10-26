@@ -44,23 +44,14 @@ main {
   height: 12vmin;
   font-size: 2.5vmin;
 }
-.chekbox-Text {
-  padding: 2vmin;
-  display: flex;
-  align-items: center;
-}
-.terms-text {
-  font-size: 2.2vmin;
-  margin: 1vmin;
-}
 .submit-button {
   height: 7vmin;
-  width: 20vmin;
   border-radius: 5vmin;
-  margin-left: 3vmin;
+  margin: 1vmin 2vmin 0px 2vmin;
   border: none;
   background-color: #6ebb2d;
   font-size: 2.5vmin;
+  cursor: pointer;
 }
 /* contact-info  */
 .contactinfo {
@@ -76,25 +67,26 @@ main {
 }
 .main-contact-icons {
   font-size: 5vmin;
-  padding: 1vmin;
+  padding: 0.5vmin;
 }
 .contactinfo-text1 {
   font-size: 3vmin;
   font-weight: 700;
-  padding: 1vmin;
+  padding: 0.5vmin;
 }
 .contactinfo-text2 {
   font-size: 2.5vmin;
   padding: 0.5vmin;
 }
-@media (max-width: 850px) {
+@media (max-width: 900px) {
   .contactinfo {
     height: unset;
-    display: flex;
+    max-width: unset;
     flex-wrap: wrap;
+    flex-direction: row;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .contact-form {
     width: 90vmin;
   }
