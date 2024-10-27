@@ -2,7 +2,8 @@ import React from "react";
 import "./Profile.css";
 import { useNavigate } from "react-router-dom";
 
-const ProfileDetails = () => {
+const ProfileDetails = (props) => {
+  const { name, username, gender, city } = props;
   const navigate = useNavigate();
   return (
     <>
@@ -22,11 +23,20 @@ const ProfileDetails = () => {
           </div>
           <div className="profile-info">
             <p>
-              <b>Yogesh Saini</b> (He/Him/his)
+              <b>{name?.charAt(0).toUpperCase() + name?.slice(1)}</b>{" "}
+              {gender === "male"
+                ? "(He/Him/His)"
+                : gender === "female"
+                ? "(She/Her)"
+                : "(They/Them)"}
             </p>
-            <p>@yogesh_1___</p>
+            <b>
+              <i>
+                <p>@{username}</p>
+              </i>
+            </b>
             <p>
-              <i className="fa-solid fa-location-dot"></i> Rajasthan
+              <i className="fa-solid fa-location-dot"></i> {city}
             </p>
             <p
               onClick={() => navigate("/Trip-connect/profile/edit")}

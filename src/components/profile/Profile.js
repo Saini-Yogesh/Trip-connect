@@ -1,22 +1,77 @@
-import React from "react";
-import Header from "./Header";
-import ProfileDetails from "./FirstColumn";
+import React, { useEffect, useState } from "react";
+// import Header from "./Header";
+import FirstColumn from "./FirstColumn";
 import "./Profile.css";
 import SecondColume from "./SecondColumn";
+import { useNavigate, useParams } from "react-router-dom";
+import ProfileNotFound from "./profileNotFound";
 
 const Profile = () => {
+  const { username } = useParams();
+  const navigate = useNavigate();
+  const [userDetails, setUserDetails] = useState({});
+
+  useEffect(() => {
+    (async () => {
+      try {
+        let response = await fetch(
+          "http://localhost:5000/api/user/profileDetail",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username }),
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        response = await response.json();
+        if (response.success) {
+          setUserDetails(response.result);
+        }
+      } catch (error) {}
+    })();
+  }, [username, navigate]);
+
+  const {
+    name,
+    gender,
+    city,
+    hobbiesOrProfession,
+    about,
+    history,
+    experiences,
+  } = userDetails;
+
   return (
     <>
       <div style={{ height: "15vmin" }}></div>
-      <Header />
-      <div className="profile-page">
-        <div className="first-column">
-          <ProfileDetails />
+      {Object.keys(userDetails).length > 0 ? (
+        <div>
+          {/* <Header /> */}
+          <div className="profile-page">
+            <div className="first-column">
+              <FirstColumn
+                name={name}
+                gender={gender}
+                city={city}
+                username={username}
+              />
+            </div>
+            <div className="second-column">
+              <SecondColume
+                hobbiesOrProfession={hobbiesOrProfession}
+                about={about}
+                history={history}
+                experiences={experiences}
+              />
+            </div>
+          </div>
         </div>
-        <div className="second-column">
-          <SecondColume />
-        </div>
-      </div>
+      ) : (
+        <ProfileNotFound />
+      )}
     </>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./NavbarCSS.css";
 
 const Profile = () => {
@@ -11,6 +11,22 @@ const Profile = () => {
     localStorage.removeItem("authToken"); // Remove authToken from localStorage
     setShowDropdown(false);
     navigate("/Trip-connect");
+    window.location.reload();
+  };
+
+  const henadleProfileClick = async () => {
+    const email = localStorage.getItem("authToken");
+    let response = await fetch("http://localhost:5000/api/user/profileDetail", {
+      method: "POST",
+      headers: { "content-type": "Application/json" },
+      body: JSON.stringify({ email }),
+    });
+    response = await response.json();
+    if (response.success) {
+      const { username } = response.result;
+      return navigate(`/Trip-connect/Profile/${username}`);
+    }
+    return navigate("/Trip-connect/notfound");
   };
 
   const handleOutsideClick = (event) => {
@@ -39,17 +55,9 @@ const Profile = () => {
             className="main-links-style"
             onClick={() => setShowDropdown(false)}
           >
-            <Link to="/Trip-connect/profile" className="no-outline-navbar">
+            <p onClick={henadleProfileClick} className="no-outline-navbar">
               My Profile
-            </Link>
-          </p>
-          <p
-            className="main-links-style"
-            onClick={() => setShowDropdown(false)}
-          >
-            <Link to="/Trip-connect/Settings" className="no-outline-navbar">
-              Settings
-            </Link>
+            </p>
           </p>
           <p className="main-links-style Logout" onClick={handleLogout}>
             Logout

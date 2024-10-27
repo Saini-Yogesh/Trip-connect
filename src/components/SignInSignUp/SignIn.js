@@ -7,7 +7,7 @@ const SignIn = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [animation, setAnimation] = useState("form-slide-in");
+  const animation = useState("form-slide-in");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,6 +24,7 @@ const SignIn = () => {
       localStorage.setItem("authToken", response.token);
       alert("User logged in");
       navigate("/Trip-connect");
+      window.location.reload();
     } catch (err) {
       console.error("Error during sign-in");
     }
@@ -40,6 +41,7 @@ const SignIn = () => {
             <input
               className="login-input"
               type="email"
+              name="email"
               placeholder="Enter E-mail"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -48,6 +50,7 @@ const SignIn = () => {
             <input
               className="login-input"
               type="password"
+              name="password"
               placeholder="Enter Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}

@@ -74,6 +74,7 @@ const SignUp = () => {
       localStorage.setItem("authToken", response.token);
       alert("User added");
       navigate("/Trip-connect");
+      window.location.reload();
     } catch (err) {
       console.error("Error during sign-up");
     }
