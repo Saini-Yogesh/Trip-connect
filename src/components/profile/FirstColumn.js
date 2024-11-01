@@ -70,19 +70,44 @@ const ProfileDetails = (props) => {
         <div className="socail-links">
           <h3 className="text-left-border">Soical Links </h3>
           <div className="social-icons">
-            <a href={links.instagram} target="_blank" rel="noopener noreferrer">
+            <a
+              href={links.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => !links.instagram && e.preventDefault()}
+            >
               <i className="fa-brands fa-instagram"></i>
             </a>
-            <a href={links.facebook} target="_blank" rel="noopener noreferrer">
+            <a
+              href={links.facebook || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => !links.facebook && e.preventDefault()}
+            >
               <i className="fa-brands fa-facebook"></i>
             </a>
-            <a href={links.youtube} target="_blank" rel="noopener noreferrer">
+            <a
+              href={links.youtube || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => !links.youtube && e.preventDefault()}
+            >
               <i className="fa-brands fa-youtube"></i>
             </a>
-            <a href={links.twitter} target="_blank" rel="noopener noreferrer">
+            <a
+              href={links.twitter || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => !links.twitter && e.preventDefault()}
+            >
               <i className="fa-brands fa-x-twitter"></i>
             </a>
-            <a href={links.website} target="_blank" rel="noopener noreferrer">
+            <a
+              href={links.website || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => !links.website && e.preventDefault()}
+            >
               <i className="fa-solid fa-globe"></i>
             </a>
           </div>
