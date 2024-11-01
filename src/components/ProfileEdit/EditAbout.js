@@ -1,17 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const EditAbout = () => {
+const EditAbout = ({ profileData, updateProfile }) => {
   const [profile, setProfile] = useState({
-    name: "",
-    dob: "03-07-2005",
-    username: "",
-    city: "",
-    about: "",
-    hobbiesProfession: "",
-    experiences: "",
-    gender: "Female",
-    email: "yogesh@example.com",
+    name: profileData.name || "",
+    dob: profileData.dob ? profileData.dob.split("T")[0] : "",
+    username: profileData.username || "",
+    city: profileData.city || "",
+    about: profileData.about || "",
+    hobbiesOrProfession: profileData.hobbiesOrProfession || "",
+    experiences: profileData.experiences || "",
+    gender: profileData.gender || "Female",
+    email: profileData.email || "",
   });
+
+  useEffect(() => {
+    setProfile({
+      name: profileData.name || "",
+      dob: profileData.dob ? profileData.dob.split("T")[0] : "",
+      username: profileData.username || "",
+      city: profileData.city || "",
+      about: profileData.about || "",
+      hobbiesOrProfession: profileData.hobbiesOrProfession || "",
+      experiences: profileData.experiences || "",
+      gender: profileData.gender || "Female",
+      email: profileData.email || "",
+    });
+  }, [profileData]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,17 +33,12 @@ const EditAbout = () => {
   };
 
   const handleSave = () => {
-    console.log("Profile saved:", profile);
+    updateProfile(profile);
   };
 
   return (
     <div className="content-area">
       <h2 className="section-title">Edit About</h2>
-
-      <div className="form-group">
-        <label className="form-label">Email</label>
-        <input value={profile.email} className="edit-form-input" disabled />
-      </div>
 
       <div className="form-group">
         <label className="form-label">Name</label>
@@ -43,14 +52,13 @@ const EditAbout = () => {
       </div>
 
       <div className="form-group">
+        <label className="form-label">Email</label>
+        <input value={profile.email} className="edit-form-input" disabled />
+      </div>
+
+      <div className="form-group">
         <label className="form-label">Username</label>
-        <input
-          type="text"
-          name="username"
-          value={profile.username}
-          onChange={handleChange}
-          className="edit-form-input"
-        />
+        <input value={profile.username} className="edit-form-input" disabled />
       </div>
 
       <div className="form-group">
@@ -61,21 +69,33 @@ const EditAbout = () => {
           value={profile.city}
           onChange={handleChange}
           className="edit-form-input"
+          placeholder="Add your city"
         />
       </div>
 
       <div className="form-group">
         <label className="form-label">Date of Birth</label>
-        <input value={profile.dob} className="edit-form-input" disabled />
+        <input
+          type="date"
+          name="dob"
+          value={profile.dob}
+          onChange={handleChange}
+          className="edit-form-input"
+        />
       </div>
 
       <div className="form-group">
         <label className="form-label">Gender</label>
-        <input
+        <select
+          name="gender"
           value={profile.gender}
-          disabled
+          onChange={handleChange}
           className="edit-form-select"
-        ></input>
+        >
+          <option value="female">Female</option>
+          <option value="male">Male</option>
+          <option value="non-binary-other">Other</option>
+        </select>
       </div>
 
       <div className="form-group">
@@ -92,10 +112,10 @@ const EditAbout = () => {
       <div className="form-group">
         <label className="form-label">Hobbies/Profession</label>
         <textarea
-          name="hobbiesProfession"
-          value={profile.hobbiesProfession}
+          name="hobbiesOrProfession"
+          value={profile.hobbiesOrProfession}
           onChange={handleChange}
-          placeholder="Tell us your hobbies/profession for a batter matching..."
+          placeholder="Tell us your hobbies/profession for a better matching..."
           className="edit-form-textarea"
         />
       </div>
@@ -106,7 +126,7 @@ const EditAbout = () => {
           name="experiences"
           value={profile.experiences}
           onChange={handleChange}
-          placeholder="Tell us your valuenable experiences..."
+          placeholder="Tell us your valuable experiences..."
           className="edit-form-textarea"
         />
       </div>

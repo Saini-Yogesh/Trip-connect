@@ -22,7 +22,6 @@ const SignIn = () => {
         return alert(response.result);
       }
       localStorage.setItem("authToken", response.token);
-      alert("User logged in");
       navigate("/Trip-connect");
       window.location.reload();
     } catch (err) {

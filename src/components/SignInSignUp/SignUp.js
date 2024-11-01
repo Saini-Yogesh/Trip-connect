@@ -15,21 +15,40 @@ const SignUp = () => {
     gender: "",
     username: "",
   });
-  // eslint-disable-next-line
   const [error, setError] = useState("");
+  const [isUsernameAvailable, setIsUsernameAvailable] = useState(true);
 
-  const handleChange = (e) => {
+  const handleChange = async (e) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
+
+    if (name === "username" && step === 3) {
+      // Check username availability on change
+      try {
+        const response = await fetch(
+          "http://localhost:5000/api/user/check-username/",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username: value }),
+          }
+        );
+        const result = await response.json();
+        setIsUsernameAvailable(result.success); // True if available
+      } catch (err) {
+        console.error("Error checking username availability", err);
+      }
+    }
   };
 
   const handleNextStep = async (e) => {
     e.preventDefault();
     if (step === 1) {
       try {
-        let response = await fetch(
+        const response = await fetch(
           "http://localhost:5000/api/user/check-email/",
           {
             method: "POST",
@@ -37,10 +56,12 @@ const SignUp = () => {
             body: JSON.stringify({ email: formData.email }),
           }
         );
-        response = await response.json();
-        if (!response.success) {
-          return alert("User already exists");
+        const result = await response.json();
+        if (!result.success) {
+          setError("Email is already registered");
+          return;
         }
+        setError("");
         setStep(step + 1);
         slidingAnimation();
       } catch (err) {
@@ -62,17 +83,17 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      let response = await fetch("http://localhost:5000/api/user/signUp", {
+      const response = await fetch("http://localhost:5000/api/user/signUp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-      response = await response.json();
-      if (!response.success) {
-        return alert(response.result);
+      const result = await response.json();
+      if (!result.success) {
+        setError(result.result);
+        return;
       }
-      localStorage.setItem("authToken", response.token);
-      alert("User added");
+      localStorage.setItem("authToken", result.token);
       navigate("/Trip-connect");
       window.location.reload();
     } catch (err) {
@@ -170,7 +191,16 @@ const SignUp = () => {
                 onChange={handleChange}
                 required
               />
-              <button className="signUp-button" type="submit">
+              {!isUsernameAvailable && (
+                <p style={{ color: "red", fontSize: "2.5vmin" }}>
+                  Username is already taken
+                </p>
+              )}
+              <button
+                className="signUp-button"
+                type="submit"
+                disabled={!isUsernameAvailable}
+              >
                 Submit
               </button>
             </>

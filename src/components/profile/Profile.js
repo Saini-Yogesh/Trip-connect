@@ -35,6 +35,7 @@ const Profile = () => {
   }, [username, navigate]);
 
   const {
+    email,
     name,
     gender,
     city,
@@ -42,6 +43,7 @@ const Profile = () => {
     about,
     history,
     experiences,
+    links,
   } = userDetails;
 
   return (
@@ -53,10 +55,12 @@ const Profile = () => {
           <div className="profile-page">
             <div className="first-column">
               <FirstColumn
+                email={email}
                 name={name}
                 gender={gender}
                 city={city}
                 username={username}
+                links={links}
               />
             </div>
             <div className="second-column">

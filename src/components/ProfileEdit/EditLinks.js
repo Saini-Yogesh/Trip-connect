@@ -1,13 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const EditLinks = () => {
+const EditLinks = ({ profileData, updateProfile }) => {
   const [links, setLinks] = useState({
-    facebook: "",
-    twitter: "",
-    instagram: "",
-    youtube: "",
-    website: "",
+    facebook: profileData.links?.facebook || "",
+    twitter: profileData.links?.twitter || "",
+    instagram: profileData.links?.instagram || "",
+    youtube: profileData.links?.youtube || "",
+    website: profileData.links?.website || "",
   });
+
+  useEffect(() => {
+    setLinks({
+      facebook: profileData.links?.facebook || "",
+      twitter: profileData.links?.twitter || "",
+      instagram: profileData.links?.instagram || "",
+      youtube: profileData.links?.youtube || "",
+      website: profileData.links?.website || "",
+    });
+  }, [profileData]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -15,7 +25,7 @@ const EditLinks = () => {
   };
 
   const handleSave = () => {
-    console.log("Links saved:", links);
+    updateProfile({ links });
   };
 
   return (
@@ -59,13 +69,13 @@ const EditLinks = () => {
       </div>
 
       <div className="form-group">
-        <label className="form-label">Youtube</label>
+        <label className="form-label">YouTube</label>
         <input
           type="url"
           name="youtube"
           value={links.youtube}
           onChange={handleChange}
-          placeholder="Youtube URL"
+          placeholder="YouTube URL"
           className="edit-form-input"
         />
       </div>

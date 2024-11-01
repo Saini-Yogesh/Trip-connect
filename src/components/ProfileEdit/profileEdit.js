@@ -1,13 +1,62 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ProfileEditCSS.css";
 import EditAbout from "./EditAbout";
 import EditLinks from "./EditLinks";
+import { useNavigate, useParams } from "react-router-dom";
 
 const ProfileEdit = () => {
   const [activeTab, setActiveTab] = useState("about");
+  const [profileData, setProfileData] = useState(null);
+  const { username } = useParams();
+  const navigate = useNavigate();
 
   const handleLogout = () => {
-    console.log("Logged out");
+    localStorage.removeItem("authToken"); // Remove authToken from localStorage
+    navigate("/Trip-connect");
+    window.location.reload();
+  };
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await fetch(
+          "http://localhost:5000/api/user/profileDetail",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username }),
+          }
+        );
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setProfileData(data.result);
+      } catch (error) {
+        console.error("Error fetching profile data:", error);
+      }
+    })();
+  }, [username]);
+
+  const updateProfile = async (updatedData) => {
+    try {
+      const response = await fetch(
+        `http://localhost:5000/api/user/profile/${username}`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(updatedData),
+        }
+      );
+      if (!response.ok) {
+        throw new Error("Failed to update profile");
+      }
+      const data = await response.json();
+      setProfileData(data.updatedProfile);
+      window.location.reload();
+    } catch (error) {
+      console.error("Error updating profile:", error);
+    }
   };
 
   return (
@@ -44,8 +93,18 @@ const ProfileEdit = () => {
         </div>
 
         <div className="edit-form-content">
-          {activeTab === "about" && <EditAbout />}
-          {activeTab === "links" && <EditLinks />}
+          {activeTab === "about" && profileData && (
+            <EditAbout
+              profileData={profileData}
+              updateProfile={updateProfile}
+            />
+          )}
+          {activeTab === "links" && profileData && (
+            <EditLinks
+              profileData={profileData}
+              updateProfile={updateProfile}
+            />
+          )}
         </div>
       </div>
     </>

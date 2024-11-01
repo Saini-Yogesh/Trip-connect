@@ -1,9 +1,24 @@
 import React from "react";
 import "./Profile.css";
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const ProfileDetails = (props) => {
-  const { name, username, gender, city } = props;
+  const { email, name, username, gender, city, links } = props;
+  const [isOwner, setIsOwner] = useState(false);
+  useEffect(() => {
+    const token = localStorage.getItem("authToken");
+    if (token) {
+      try {
+        if (token === email) {
+          setIsOwner(true);
+        }
+      } catch (error) {
+        console.error("Invalid token", error);
+      }
+    }
+  }, [email]);
+
   const navigate = useNavigate();
   return (
     <>
@@ -36,25 +51,40 @@ const ProfileDetails = (props) => {
               </i>
             </b>
             <p>
-              <i className="fa-solid fa-location-dot"></i> {city}
+              <i className="fa-solid fa-location-dot"></i>{" "}
+              {city === "" ? "Add your city" : city}
             </p>
-            <p
-              onClick={() => navigate("/Trip-connect/profile/edit")}
-              className="profile-edit-button"
-            >
-              <i className="fa-solid fa-pen-to-square"></i> Complete Your
-              Profile
-            </p>
+            {isOwner && (
+              <p
+                onClick={() =>
+                  navigate(`/Trip-connect/profile/edit/${username}`)
+                }
+                className="profile-edit-button"
+              >
+                <i className="fa-solid fa-pen-to-square"></i> Complete Your
+                Profile
+              </p>
+            )}
           </div>
         </div>
         <div className="socail-links">
           <h3 className="text-left-border">Soical Links </h3>
           <div className="social-icons">
-            <i className="fa-brands fa-instagram"></i>
-            <i className="fa-brands fa-facebook"></i>
-            <i className="fa-brands fa-youtube"></i>
-            <i className="fa-brands fa-x-twitter"></i>
-            <i className="fa-solid fa-globe"></i>
+            <a href={links.instagram} target="_blank" rel="noopener noreferrer">
+              <i className="fa-brands fa-instagram"></i>
+            </a>
+            <a href={links.facebook} target="_blank" rel="noopener noreferrer">
+              <i className="fa-brands fa-facebook"></i>
+            </a>
+            <a href={links.youtube} target="_blank" rel="noopener noreferrer">
+              <i className="fa-brands fa-youtube"></i>
+            </a>
+            <a href={links.twitter} target="_blank" rel="noopener noreferrer">
+              <i className="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href={links.website} target="_blank" rel="noopener noreferrer">
+              <i className="fa-solid fa-globe"></i>
+            </a>
           </div>
         </div>
       </div>

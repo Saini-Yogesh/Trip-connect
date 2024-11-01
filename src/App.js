@@ -39,7 +39,6 @@ const AppContent = () => {
         <Route exact path="/Trip-connect/reviews" element={<ReviewSection />} />
         <Route exact path="/Trip-connect/signIn" element={<SignIn />} />
         <Route exact path="/Trip-connect/signup" element={<SignUp />} />
-        {/* <Route exact path="/Trip-connect/profile" element={<Profile />} /> */}
         <Route
           exact
           path="/Trip-connect/groups/peopleInfo"
@@ -52,7 +51,7 @@ const AppContent = () => {
         />
         <Route
           exact
-          path="/Trip-connect/profile/edit"
+          path="/Trip-connect/profile/edit/:username"
           element={<ProfileEdit />}
         />
         <Route path="/Trip-connect/profile/:username" element={<Profile />} />
