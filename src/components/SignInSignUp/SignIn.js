@@ -7,7 +7,6 @@ const SignIn = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const animation = useState("form-slide-in");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,7 +20,10 @@ const SignIn = () => {
       if (!response.success) {
         return alert(response.result);
       }
+      // Set token and expiration time in localStorage
       localStorage.setItem("authToken", response.token);
+      const expirationTime = Date.now() + 1 * 60 * 1000; // 15 minutes from now
+      localStorage.setItem("tokenExpiration", expirationTime.toString());
       navigate("/Trip-connect");
       window.location.reload();
     } catch (err) {
@@ -33,7 +35,7 @@ const SignIn = () => {
     <>
       <div className="main-signINUP">
         <div className="main-signINUP-container">
-          <form className={`login-form ${animation}`} onSubmit={handleSubmit}>
+          <form className={"login-form form-slide-in"} onSubmit={handleSubmit}>
             <p className="Sign-in-text">Let's Start New Tour</p>
             <SignUpIcons />
             <p className="enter-email-password">Login With Email & Password</p>

@@ -3,6 +3,16 @@ const bcrypt = require("bcrypt");
 const router = express.Router();
 const User = require("../models/user");
 
+const jwt = require("jsonwebtoken");
+const secretKey = "noNeedToChange";
+
+const createToken = (email) => {
+  const token = jwt.sign({ email }, secretKey, {
+    expiresIn: "15m",
+  });
+  return token;
+};
+
 router.post("/api/user/signIn", async (req, res) => {
   const { email, password } = req.body;
   if (!email || !password) {
@@ -24,7 +34,8 @@ router.post("/api/user/signIn", async (req, res) => {
         .status(401)
         .send({ success: false, result: "Invalid password" });
     }
-    res.send({ success: true, token: email });
+    const token = createToken(email);
+    res.send({ success: true, token: token });
   } catch {
     res.send({ success: false, result: "Some error occurred in finding user" });
   }

@@ -93,7 +93,10 @@ const SignUp = () => {
         setError(result.result);
         return;
       }
-      localStorage.setItem("authToken", result.token);
+      // Set token and expiration time in localStorage
+      const expirationTime = Date.now() + 15 * 60 * 1000; // 15 minutes from now
+      localStorage.setItem("authToken", response.token);
+      localStorage.setItem("tokenExpiration", expirationTime.toString());
       navigate("/Trip-connect");
       window.location.reload();
     } catch (err) {
@@ -132,7 +135,9 @@ const SignUp = () => {
                 onChange={handleChange}
                 required
               />
-              {error && <p className="error">{error}</p>}
+              {error && (
+                <p style={{ color: "red", fontSize: "2.5vmin" }}>{error}</p>
+              )}
               <button className="signUp-button" type="submit">
                 Continue
               </button>

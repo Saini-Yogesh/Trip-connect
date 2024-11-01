@@ -2,6 +2,7 @@ import React from "react";
 import "./Profile.css";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { jwtDecode } from "jwt-decode";
 
 const ProfileDetails = (props) => {
   const { email, name, username, gender, city, links } = props;
@@ -10,7 +11,9 @@ const ProfileDetails = (props) => {
     const token = localStorage.getItem("authToken");
     if (token) {
       try {
-        if (token === email) {
+        const data = jwtDecode(token);
+        const emailFromToken = data.email;
+        if (emailFromToken === email) {
           setIsOwner(true);
         }
       } catch (error) {
@@ -56,9 +59,10 @@ const ProfileDetails = (props) => {
             </p>
             {isOwner && (
               <p
-                onClick={() =>
-                  navigate(`/Trip-connect/profile/edit/${username}`)
-                }
+                onClick={() => {
+                  navigate(`/Trip-connect/profile/edit/${username}`);
+                  window.location.reload();
+                }}
                 className="profile-edit-button"
               >
                 <i className="fa-solid fa-pen-to-square"></i> Complete Your

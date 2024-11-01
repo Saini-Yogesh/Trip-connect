@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/Trip-connect/static/css/main.44872fd3.css",
+    "main.js": "/Trip-connect/static/js/main.613bc11a.js",
+    "static/js/453.10d8e400.chunk.js": "/Trip-connect/static/js/453.10d8e400.chunk.js",
+    "static/media/trips-img1.jpg": "/Trip-connect/static/media/trips-img1.7a9f01d3378f7b713fb4.jpg",
+    "static/media/trips-img2.jpg": "/Trip-connect/static/media/trips-img2.3ba09913030f8ca63b26.jpg",
+    "static/media/LoginPage-img.jpg": "/Trip-connect/static/media/LoginPage-img.c52ab3cf67f1387c2013.jpg",
+    "static/media/about-section-img2.jpg": "/Trip-connect/static/media/about-section-img2.9b9a155908359640e59c.jpg",
+    "static/media/trips-img3.jpg": "/Trip-connect/static/media/trips-img3.c4be550b266743abfa1b.jpg",
+    "static/media/about-section-img1.jpg": "/Trip-connect/static/media/about-section-img1.bc12dd92a2dfefbbf2c2.jpg",
+    "static/media/review-img2.jpg": "/Trip-connect/static/media/review-img2.5542d2ac8ed0fb6c9ea4.jpg",
+    "static/media/1.jpg": "/Trip-connect/static/media/1.8cc6d7862036a6239938.jpg",
+    "static/media/hero_section_image.jpg": "/Trip-connect/static/media/hero_section_image.d302f64197561626c0c8.jpg",
+    "static/media/review-img1.jpg": "/Trip-connect/static/media/review-img1.095b429d8854263fc67e.jpg",
+    "static/media/4.jpg": "/Trip-connect/static/media/4.51d93e630595c7e4993a.jpg",
+    "static/media/hero-section.jpg": "/Trip-connect/static/media/hero-section.0853380313a20e687763.jpg",
+    "static/media/3.jpg": "/Trip-connect/static/media/3.ce9776568cd4ffddc986.jpg",
+    "static/media/LoginPage-img2.jpg": "/Trip-connect/static/media/LoginPage-img2.605557d4041b3e778be8.jpg",
+    "static/media/2.jpg": "/Trip-connect/static/media/2.8c94e1e4ea8a50411e6d.jpg",
+    "static/media/about-section-img3.jpg": "/Trip-connect/static/media/about-section-img3.4fabb53c0c8b95f8c80b.jpg",
+    "static/media/review-img3.jpg": "/Trip-connect/static/media/review-img3.596d688195cfcbdef036.jpg",
+    "static/media/trips-img4.jpg": "/Trip-connect/static/media/trips-img4.05e45e5114cfdf8399b5.jpg",
+    "static/media/gallary-img4.jpg": "/Trip-connect/static/media/gallary-img4.39064cda612f29bd9845.jpg",
+    "static/media/gallary-img5.jpg": "/Trip-connect/static/media/gallary-img5.5efa2644aa756ec3b129.jpg",
+    "static/media/image404.png": "/Trip-connect/static/media/image404.e88046318eef11e8b074.png",
+    "index.html": "/Trip-connect/index.html",
+    "main.44872fd3.css.map": "/Trip-connect/static/css/main.44872fd3.css.map",
+    "main.613bc11a.js.map": "/Trip-connect/static/js/main.613bc11a.js.map",
+    "453.10d8e400.chunk.js.map": "/Trip-connect/static/js/453.10d8e400.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.44872fd3.css",
+    "static/js/main.613bc11a.js"
+  ]
+}

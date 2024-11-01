@@ -1,21 +1,18 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./NavbarCSS.css";
+import { jwtDecode } from "jwt-decode";
+import clearAuthToken from "../../clearAuthToken";
 
 const Profile = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    localStorage.removeItem("authToken"); // Remove authToken from localStorage
-    setShowDropdown(false);
-    navigate("/Trip-connect");
-    window.location.reload();
-  };
-
   const henadleProfileClick = async () => {
-    const email = localStorage.getItem("authToken");
+    const token = localStorage.getItem("authToken");
+    const data = jwtDecode(token);
+    const email = data.email;
     let response = await fetch("http://localhost:5000/api/user/profileDetail", {
       method: "POST",
       headers: { "content-type": "Application/json" },
@@ -24,9 +21,12 @@ const Profile = () => {
     response = await response.json();
     if (response.success) {
       const { username } = response.result;
-      return navigate(`/Trip-connect/Profile/${username}`);
+      navigate(`/Trip-connect/Profile/${username}`);
+      window.location.reload();
+    } else {
+      navigate("/Trip-connect/notfound");
+      window.location.reload();
     }
-    return navigate("/Trip-connect/notfound");
   };
 
   const handleOutsideClick = (event) => {
@@ -59,7 +59,7 @@ const Profile = () => {
               My Profile
             </p>
           </p>
-          <p className="main-links-style Logout" onClick={handleLogout}>
+          <p className="main-links-style Logout" onClick={clearAuthToken}>
             Logout
           </p>
         </div>

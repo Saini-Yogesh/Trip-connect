@@ -18,6 +18,7 @@ import Profile from "./components/profile/Profile";
 import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
 import NotFound from "./components/notFound/NotFound";
 import ProfileEdit from "./components/ProfileEdit/profileEdit";
+import checkTokenExpiration from "./checkTokenExpiration";
 
 const AppContent = () => {
   useScrollToTop();
@@ -27,6 +28,7 @@ const AppContent = () => {
       ? ""
       : "#1c2534";
   };
+  checkTokenExpiration();
   return (
     <>
       <Navbar backGroundColor={getBackgroundColor(location.pathname)} />

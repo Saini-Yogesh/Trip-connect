@@ -4,6 +4,16 @@ const router = express.Router();
 const User = require("../models/user");
 const ProfileDetail = require("../models/profileDetail");
 
+const jwt = require("jsonwebtoken");
+const secretKey = "noNeedToChange";
+
+const createToken = (email) => {
+  const token = jwt.sign({ email }, secretKey, {
+    expiresIn: "15m",
+  });
+  return token;
+};
+
 router.post("/api/user/signUp", async (req, res) => {
   const { email, password, name, dob, gender, username } = req.body;
   if (
@@ -64,13 +74,12 @@ router.post("/api/user/signUp", async (req, res) => {
 
     await user.save();
     await profileDetail.save();
-    res.send({ success: true, token: email });
+    const token = createToken(email);
+    res.send({ success: true, token: token });
   } catch (error) {
     // If ProfileDetail save fails, delete the User document to roll back
-    // if (user) {
     await User.deleteOne({ email });
     await ProfileDetail.deleteOne({ email });
-    // }
 
     res.status(500).send({
       success: false,

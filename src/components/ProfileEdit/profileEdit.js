@@ -2,19 +2,13 @@ import React, { useEffect, useState } from "react";
 import "./ProfileEditCSS.css";
 import EditAbout from "./EditAbout";
 import EditLinks from "./EditLinks";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import clearAuthoken from "../../clearAuthToken";
 
 const ProfileEdit = () => {
   const [activeTab, setActiveTab] = useState("about");
   const [profileData, setProfileData] = useState(null);
   const { username } = useParams();
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    localStorage.removeItem("authToken"); // Remove authToken from localStorage
-    navigate("/Trip-connect");
-    window.location.reload();
-  };
 
   useEffect(() => {
     (async () => {
@@ -40,11 +34,15 @@ const ProfileEdit = () => {
 
   const updateProfile = async (updatedData) => {
     try {
+      const token = localStorage.getItem("authToken");
       const response = await fetch(
         `http://localhost:5000/api/user/profile/${username}`,
         {
           method: "PUT",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
           body: JSON.stringify(updatedData),
         }
       );
@@ -85,7 +83,7 @@ const ProfileEdit = () => {
             <p className="Edit-prfile-button">Change Password</p>
             <p
               className="Edit-prfile-button Edit-prfile-button-logout"
-              onClick={handleLogout}
+              onClick={clearAuthoken}
             >
               Logout
             </p>

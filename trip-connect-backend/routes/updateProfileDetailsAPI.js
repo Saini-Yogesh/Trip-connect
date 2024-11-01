@@ -1,9 +1,10 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const ProfileDetail = require("../models/profileDetail"); // Adjust the path as necessary
 const router = express.Router();
 
-router.put("/api/user/profile/:username", async (req, res) => {
+const authenticateJWT = require("../middlewares/authenticateJWT");
+
+router.put("/api/user/profile/:username", authenticateJWT, async (req, res) => {
   const { username } = req.params;
   const updatedData = { ...req.body };
 
