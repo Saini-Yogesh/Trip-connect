@@ -55,13 +55,13 @@ router.post("/api/user/signUp", async (req, res) => {
       dob,
       gender,
       username,
-      city: "Add your city",
+      city: "",
       about: "",
-      hobbiesOrProfession:
-        "Add your hobbies or profession to find a better travel partner.",
+      city: "",
       history:
-        "Your travel history is currently empty. Start sharing your past adventures to create a record of your journey!",
-      experiences: "Describe your experiences to find a better travel partner.",
+        "Your history is currently empty. Start exploring to see your recent activity here!",
+      hobbiesOrProfession: "",
+      experiences: "",
       links: {
         facebook: "",
         twitter: "",

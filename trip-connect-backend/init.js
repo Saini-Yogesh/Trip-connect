@@ -25,7 +25,7 @@ app.listen(port, () => {
 })();
 
 // Add multiple users and profile details
-app.post("/api/user", async (req, res) => {
+app.get("/api/user", async (req, res) => {
   try {
     const userPromises = users.map(async (userData) => {
       const { email, password, name, gender, dob, username } = userData;
@@ -41,13 +41,12 @@ app.post("/api/user", async (req, res) => {
         gender,
         dob,
         username,
-        city: "Add your city",
-        about: "Add your bio to find a better travel partner.",
-        hobbiesOrProfession:
-          "Add your hobbies or profession to find a better travel partner.",
-        history: "Share your travel history to find a better travel partner.",
-        experiences:
-          "Describe your experiences to find a better travel partner.",
+        city: "",
+        about: "",
+        hobbiesOrProfession: "",
+        history:
+          "Your history is currently empty. Start exploring to see your recent activity here!",
+        experiences: "",
         links: {
           facebook: "",
           twitter: "",
