@@ -61,9 +61,9 @@ const Profile = () => {
             className="main-links-style"
             onClick={() => setShowDropdown(false)}
           >
-            <p onClick={henadleProfileClick} className="no-outline-navbar">
+            <span onClick={henadleProfileClick} className="no-outline-navbar">
               My Profile
-            </p>
+            </span>
           </p>
           <p className="main-links-style Logout" onClick={handleOnLogout}>
             Logout

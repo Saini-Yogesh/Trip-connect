@@ -83,14 +83,14 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/api/user/signUp", {
+      let response = await fetch("http://localhost:5000/api/user/signUp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-      const result = await response.json();
-      if (!result.success) {
-        setError(result.result);
+      response = await response.json();
+      if (!response.success) {
+        setError(response.result);
         return;
       }
       // Set token and expiration time in localStorage
