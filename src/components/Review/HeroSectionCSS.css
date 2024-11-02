@@ -1,6 +1,6 @@
 .review-section-hero-section {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   align-items: center;
   justify-content: space-evenly;
   margin-top: 5vmin;

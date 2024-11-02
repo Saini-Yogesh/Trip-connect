@@ -40,6 +40,12 @@ const Profile = () => {
     return () => document.removeEventListener("mousedown", handleOutsideClick);
   }, []);
 
+  const handleOnLogout = () => {
+    clearAuthToken();
+    navigate("/Trip-connect");
+    window.location.reload();
+  };
+
   return (
     <div className="profile-section" ref={dropdownRef}>
       <p
@@ -59,7 +65,7 @@ const Profile = () => {
               My Profile
             </p>
           </p>
-          <p className="main-links-style Logout" onClick={clearAuthToken}>
+          <p className="main-links-style Logout" onClick={handleOnLogout}>
             Logout
           </p>
         </div>

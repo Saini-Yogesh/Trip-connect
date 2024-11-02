@@ -2,15 +2,23 @@ import React, { useEffect, useState } from "react";
 import "./ProfileEditCSS.css";
 import EditAbout from "./EditAbout";
 import EditLinks from "./EditLinks";
-import { useParams } from "react-router-dom";
-import clearAuthoken from "../../clearAuthToken";
+import { useNavigate, useParams } from "react-router-dom";
+import clearAuthToken from "../../clearAuthToken";
 
 const ProfileEdit = () => {
   const [activeTab, setActiveTab] = useState("about");
   const [profileData, setProfileData] = useState(null);
   const { username } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
+    // Check for authToken on component mount
+    const token = localStorage.getItem("authToken");
+    if (!token) {
+      navigate("/Trip-connect", { replace: true });
+      return;
+    }
+
     (async () => {
       try {
         const response = await fetch(
@@ -30,7 +38,7 @@ const ProfileEdit = () => {
         console.error("Error fetching profile data:", error);
       }
     })();
-  }, [username]);
+  }, [username, navigate]);
 
   const updateProfile = async (updatedData) => {
     try {
@@ -55,6 +63,12 @@ const ProfileEdit = () => {
     } catch (error) {
       console.error("Error updating profile:", error);
     }
+  };
+
+  const handleOnLogout = () => {
+    clearAuthToken();
+    navigate("/Trip-connect");
+    window.location.reload();
   };
 
   return (
@@ -83,7 +97,7 @@ const ProfileEdit = () => {
             <p className="Edit-prfile-button">Change Password</p>
             <p
               className="Edit-prfile-button Edit-prfile-button-logout"
-              onClick={clearAuthoken}
+              onClick={handleOnLogout}
             >
               Logout
             </p>

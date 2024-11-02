@@ -22,7 +22,7 @@ const SignIn = () => {
       }
       // Set token and expiration time in localStorage
       localStorage.setItem("authToken", response.token);
-      const expirationTime = Date.now() + 1 * 60 * 1000; // 15 minutes from now
+      const expirationTime = Date.now() + 15 * 60 * 1000; // 15 minutes from now
       localStorage.setItem("tokenExpiration", expirationTime.toString());
       navigate("/Trip-connect");
       window.location.reload();

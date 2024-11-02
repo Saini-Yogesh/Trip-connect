@@ -1,24 +1,20 @@
 import React from "react";
 
 const PersonRow = (props) => {
-  const { name, email } = props;
+  const { name, email, index } = props;
   return (
-    <>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          borderBottom: "1px solid black",
-          alignItems: "center",
-          flexWrap: "wrap",
-          padding: "1rem",
-          minHeight: "5vmin",
-        }}
-      >
-        <div>{name}</div>
-        <div>{email}</div>
+    <div className="each-row">
+      <div>
+        {index + 1}
+        {"."} {name}
       </div>
-    </>
+      <div>
+        {email}
+        <a href={`mailto:${email}`}>
+          <i className="fa-regular fa-envelope"></i>
+        </a>
+      </div>
+    </div>
   );
 };
 
