@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
+require("dotenv").config({ path: "../.env" });
 
 const signInAPI = require("./routes/signInAPI");
 const signUpAPI = require("./routes/signUpAPI");
@@ -28,10 +29,11 @@ app.use(express.json());
 
 const port = 5000;
 
+const MONGODB_URI = process.env.MONGODB_URI;
 // database connectivity
 (async () => {
   await mongoose
-    .connect("mongodb://127.0.0.1:27017/trip-connect")
+    .connect(MONGODB_URI)
     .then(() => {
       console.log("Connected with DB");
     })

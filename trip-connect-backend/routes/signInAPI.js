@@ -2,9 +2,10 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const router = express.Router();
 const User = require("../models/user");
+require("dotenv").config({ path: "../../.env" });
 
 const jwt = require("jsonwebtoken");
-const secretKey = "noNeedToChange";
+const secretKey = process.env.SECRET_KEY;
 
 const createToken = (email) => {
   const token = jwt.sign({ email }, secretKey, {

@@ -5,6 +5,7 @@ const User = require("./models/user.js");
 const users = require("./roughData");
 const ProfileDetail = require("./models/profileDetail.js"); // Import the ProfileDetail model
 const bcrypt = require("bcrypt");
+require("dotenv").config({ path: "../.env" });
 
 app.use(express.json());
 const port = 5000;
@@ -12,10 +13,11 @@ app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}/`);
 });
 
+const MONGODB_URI = process.env.MONGODB_URI;
 // database connectivity
 (async () => {
   await mongoose
-    .connect("mongodb://127.0.0.1:27017/trip-connect")
+    .connect(MONGODB_URI)
     .then(() => {
       console.log("Connected with DB");
     })
