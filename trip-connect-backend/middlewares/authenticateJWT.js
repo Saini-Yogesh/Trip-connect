@@ -10,7 +10,8 @@ const authenticateJWT = (req, res, next) => {
         return res.sendStatus(403);
       }
       req.user = user;
-      next();
+      // console.log("Middleware reached. Checking authorization...");
+      return next();
     });
   } else {
     res.sendStatus(401); // Unauthorized if no token is provided

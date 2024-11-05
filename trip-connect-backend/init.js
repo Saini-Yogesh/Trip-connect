@@ -44,8 +44,7 @@ app.get("/api/user", async (req, res) => {
         city: "",
         about: "",
         hobbiesOrProfession: "",
-        history:
-          "Your history is currently empty. Start exploring to see your recent activity here!",
+        history: [],
         experiences: "",
         links: {
           facebook: "",

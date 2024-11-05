@@ -19,6 +19,7 @@ import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton"
 import NotFound from "./components/notFound/NotFound";
 import ProfileEdit from "./components/ProfileEdit/profileEdit";
 import checkTokenExpiration from "./checkTokenExpiration";
+import AllHistory from "./components/profile/ViewAllHisteory";
 
 const AppContent = () => {
   useScrollToTop();
@@ -55,6 +56,11 @@ const AppContent = () => {
           exact
           path="/Trip-connect/profile/edit/:username"
           element={<ProfileEdit />}
+        />
+        <Route
+          exact
+          path="/Trip-connect/profile/:username/all-history"
+          element={<AllHistory />}
         />
         <Route path="/Trip-connect/profile/:username" element={<Profile />} />
         <Route path="*" element={<NotFound />} /> {/* Catch-all 404 route */}

@@ -12,6 +12,12 @@ const TripsDescribe = (props) => {
     button1Link,
     button2Link,
   } = props;
+
+  const handleOnclick = () => {
+    const dataToSend = { TourName: { heading } };
+    navigate(button1Link, { state: dataToSend });
+  };
+
   return (
     <div className="TripsDescribePart-text">
       <p className="TripsDescribePart-text1">
@@ -21,12 +27,7 @@ const TripsDescribe = (props) => {
         <b>{description}</b>
       </p>
       <div className="TripsDescribePart-buttons">
-        <button
-          className="TripsDescribePart-button1"
-          onClick={() => {
-            navigate(button1Link);
-          }}
-        >
+        <button className="TripsDescribePart-button1" onClick={handleOnclick}>
           {button1Text}
         </button>
         <button

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./Profile.css";
+import { useNavigate } from "react-router-dom";
+import formatRelativeTime from "./formRelativeTime";
 
 const TruncatedText = ({ text }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -10,25 +12,13 @@ const TruncatedText = ({ text }) => {
   return (
     <div>
       <div style={{ whiteSpace: "pre-wrap" }}>
-        {(isExpanded ? lines : lines.slice(0, 8)).map((line, index) => (
+        {(isExpanded ? lines : lines.slice(0, 4)).map((line, index) => (
           <div key={index}>{line}</div> // Use <div> to avoid nesting <p>
         ))}
       </div>
 
-      {lines.length > 8 && (
-        <button
-          onClick={toggleExpanded}
-          className="toggle-button"
-          style={{
-            color: "blue",
-            cursor: "pointer",
-            background: "none",
-            border: "none",
-            padding: 0,
-            font: "inherit",
-            outline: "inherit",
-          }}
-        >
+      {lines.length > 4 && (
+        <button onClick={toggleExpanded} className="toggle-button">
           {isExpanded ? "See Less" : "See More"}
         </button>
       )}
@@ -36,8 +26,10 @@ const TruncatedText = ({ text }) => {
   );
 };
 
-const SecondColume = (props) => {
-  const { hobbiesOrProfession, about, history, experiences } = props;
+const SecondColumn = (props) => {
+  const { hobbiesOrProfession, about, history, experiences, username } = props;
+  const navigate = useNavigate();
+
   return (
     <div className="second-column">
       <div className="about">
@@ -65,11 +57,45 @@ const SecondColume = (props) => {
         />
       </div>
       <div className="history-section">
-        <h3 className="text-left-border">Your History</h3>
-        <TruncatedText text={history} />
+        <h3 className="text-left-border">
+          Your History{" "}
+          <span
+            onClick={() =>
+              navigate(`/Trip-connect/profile/${username}/all-history`, {
+                state: { history },
+              })
+            }
+            style={{ cursor: "pointer", color: "blue" }}
+          >
+            View all History
+          </span>
+        </h3>
+        {history && history.length > 0 ? (
+          history
+            .slice(-6)
+            .reverse()
+            .map((entry, index) => (
+              <div
+                key={index}
+                className={`history-entry ${
+                  index % 2 === 0 ? "history-entry-background" : ""
+                }`}
+              >
+                <p>
+                  Planned an adventure to <strong>{entry.description}</strong>
+                </p>
+                <p>{formatRelativeTime(entry.date)}</p>
+              </div>
+            ))
+        ) : (
+          <p>
+            Your history is currently empty. Start exploring to see your recent
+            activity here!
+          </p>
+        )}
       </div>
     </div>
   );
 };
 
-export default SecondColume;
+export default SecondColumn;

@@ -37,10 +37,12 @@ const profileDetailSchema = mongoose.Schema({
     type: String,
     trim: true,
   },
-  history: {
-    type: String,
-    trim: true,
-  },
+  history: [
+    {
+      description: { type: String, required: true, trim: true },
+      date: { type: Date, default: Date.now },
+    },
+  ],
   experiences: {
     type: String,
     trim: true,

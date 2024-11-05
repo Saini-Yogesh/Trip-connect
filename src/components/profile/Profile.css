@@ -81,6 +81,12 @@
   border-left: #005e66 solid 5px;
   border-radius: 3px;
   padding-left: 1vmin;
+  display: flex;
+  justify-content: space-between;
+}
+.text-left-border span {
+  cursor: pointer;
+  color: blue;
 }
 .social-icons {
   display: flex;
@@ -126,6 +132,27 @@ i {
   margin: 16px 0 16px;
 }
 
+.toggle-button {
+  color: blue;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0px;
+  font: inherit;
+  outline: inherit;
+}
+
+.history-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0pc 2vmin;
+  border-radius: 5px;
+}
+
+.history-entry-background {
+  background-color: antiquewhite;
+}
 /* Responsive Styles */
 @media (max-width: 900px) {
   .profile-page {

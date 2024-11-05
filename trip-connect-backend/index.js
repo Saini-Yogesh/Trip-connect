@@ -10,6 +10,7 @@ const contactUsAPI = require("./routes/contactUsAPI");
 const profileDetailAPI = require("./routes/profileDetailAPI");
 const checkUsernameAPI = require("./routes/checkUserNameAPI");
 const updateProfileDetailsAPI = require("./routes/updateProfileDetailsAPI");
+const updateHisteoryAPI = require("./routes/updateHisteoryAPI");
 
 /*
 CORS Policy: If your frontend and backend are hosted on different ports 
@@ -61,6 +62,9 @@ app.post("/api/user/profileDetail", profileDetailAPI);
 
 // update profile detail
 app.put("/api/user/profile/:username", updateProfileDetailsAPI);
+
+// update/add histeoy
+app.post("/api/user/profile/updateHistory", updateHisteoryAPI);
 
 // review
 app.post("/api/review", reviewAPI);

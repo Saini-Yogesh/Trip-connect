@@ -58,8 +58,7 @@ router.post("/api/user/signUp", async (req, res) => {
       city: "",
       about: "",
       city: "",
-      history:
-        "Your history is currently empty. Start exploring to see your recent activity here!",
+      history: [],
       hobbiesOrProfession: "",
       experiences: "",
       links: {

@@ -69,6 +69,7 @@ const Profile = () => {
                 about={about}
                 history={history}
                 experiences={experiences}
+                username={username}
               />
             </div>
           </div>

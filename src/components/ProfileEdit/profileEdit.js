@@ -59,6 +59,7 @@ const ProfileEdit = () => {
       }
       const data = await response.json();
       setProfileData(data.updatedProfile);
+      alert("Data updated successfully");
       window.location.reload();
     } catch (error) {
       console.error("Error updating profile:", error);

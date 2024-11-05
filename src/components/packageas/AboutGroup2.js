@@ -4,15 +4,18 @@ import { useNavigate } from "react-router-dom";
 
 const AboutGroup2 = (props) => {
   const navigate = useNavigate();
-  const { feature, heading, description, buttonText, buttonLink } = props;
+  const { heading, description, buttonText, buttonLink } = props;
+
+  const handleOnclick = () => {
+    const dataToSend = { TourName: { heading } };
+    navigate(buttonLink, { state: dataToSend });
+  };
+
   return (
     <>
       <div className="Packageas-container Packageas-Group-container">
         <div className="Packageas-container-text">
           <div></div>
-          <p className="Packageas-container-text1 Packageas-Group-container-text1">
-            {feature}
-          </p>
           <p className="Packageas-container-text2">
             <b> {heading} </b>
           </p>
@@ -23,9 +26,7 @@ const AboutGroup2 = (props) => {
           </p>
           <button
             className="Packageas-container-Book-Now-button Packageas-Group-container-button"
-            onClick={() => {
-              navigate(buttonLink);
-            }}
+            onClick={handleOnclick}
           >
             {buttonText}
           </button>
