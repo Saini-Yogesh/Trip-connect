@@ -84,7 +84,17 @@ const FooterNavbar = () => {
           <div className="footer-container3">
             © 2024 TripConnect, we love our users!
             <i>
-              <b> Designed and built by Yogesh</b>
+              <b>
+                {" "}
+                Designed and built by{" "}
+                <a
+                  href="https://saini-yogesh.github.io/Portfolio/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Yogesh
+                </a>
+              </b>
             </i>
           </div>
         </div>

@@ -10,6 +10,7 @@ const PeopleInfo = () => {
   const navigate = useNavigate();
   const [confirmation, setConfirmation] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const [inputPage, setInputPage] = useState(""); // New state for input page
   const rowsPerPage = 10;
 
   const location = useLocation();
@@ -34,7 +35,22 @@ const PeopleInfo = () => {
 
   // Handle page change
   const goToPage = (pageNumber) => {
-    setCurrentPage(pageNumber);
+    if (pageNumber >= 1 && pageNumber <= totalPages) {
+      setCurrentPage(pageNumber);
+      setInputPage(""); // Reset input after valid navigation
+    }
+  };
+
+  const handleInputChange = (e) => {
+    setInputPage(e.target.value);
+  };
+
+  const handleInputSubmit = (e) => {
+    e.preventDefault();
+    const pageNumber = parseInt(inputPage, 10);
+    if (!isNaN(pageNumber)) {
+      goToPage(pageNumber);
+    }
   };
 
   const handleOnSureButton = async () => {
@@ -119,15 +135,9 @@ const PeopleInfo = () => {
             >
               Previous
             </button>
-            {[...Array(totalPages)].map((ele, i) => (
-              <button
-                key={i}
-                onClick={() => goToPage(i + 1)}
-                className={currentPage === i + 1 ? "active" : ""}
-              >
-                {i + 1}
-              </button>
-            ))}
+            <span>
+              Page {currentPage} of {totalPages}
+            </span>
             <button
               onClick={() => goToPage(currentPage + 1)}
               disabled={currentPage === totalPages}
@@ -135,6 +145,22 @@ const PeopleInfo = () => {
               Next
             </button>
           </div>
+
+          {/* Direct Page Input */}
+          <form onSubmit={handleInputSubmit} className="pageInputForm">
+            <label className="pageLabel">Go to page: </label>
+            <input
+              type="number"
+              value={inputPage}
+              onChange={handleInputChange}
+              min="1"
+              max={totalPages}
+              className="pageInput"
+            />
+            <button type="submit" className="goButton">
+              Go
+            </button>
+          </form>
         </div>
       ) : (
         <div className={styles.overlay}>
