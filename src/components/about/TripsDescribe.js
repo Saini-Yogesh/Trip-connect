@@ -14,7 +14,7 @@ const TripsDescribe = (props) => {
   } = props;
 
   const handleOnclick = () => {
-    const dataToSend = { TourName: { heading } };
+    const dataToSend = { TourName: heading, category: "trips" };
     navigate(button1Link, { state: dataToSend });
   };
 

@@ -7,7 +7,7 @@ const AboutGroup1 = (props) => {
   const { heading, description, buttonText, buttonLink } = props;
 
   const handleOnclick = () => {
-    const dataToSend = { TourName: { heading } };
+    const dataToSend = { TourName: heading, category: "groups" };
     navigate(buttonLink, { state: dataToSend });
   };
 

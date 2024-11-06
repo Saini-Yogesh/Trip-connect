@@ -21,7 +21,7 @@ const Profile = () => {
     response = await response.json();
     if (response.success) {
       const { username } = response.result;
-      navigate(`/Trip-connect/Profile/${username}`);
+      navigate(`/Trip-connect/profile/${username}`);
       window.location.reload();
     } else {
       navigate("/Trip-connect/notfound");

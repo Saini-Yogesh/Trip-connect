@@ -21,6 +21,7 @@ import ProfileEdit from "./components/ProfileEdit/profileEdit";
 import checkTokenExpiration from "./checkTokenExpiration";
 import AllHistory from "./components/profile/ViewAllHisteory";
 import SupportPartner from "./components/peoplesInfo/supportPartner/SupportPartner";
+import Confirmation from "./components/peoplesInfo/Confirmation";
 
 const AppContent = () => {
   useScrollToTop();
@@ -45,12 +46,7 @@ const AppContent = () => {
         <Route exact path="/Trip-connect/signup" element={<SignUp />} />
         <Route
           exact
-          path="/Trip-connect/groups/peopleInfo"
-          element={<ContactInfo />}
-        />
-        <Route
-          exact
-          path="/Trip-connect/trips/peopleInfo"
+          path="/Trip-connect/:category/peopleInfo"
           element={<ContactInfo />}
         />
         <Route
@@ -65,8 +61,12 @@ const AppContent = () => {
         />
         <Route path="/Trip-connect/profile/:username" element={<Profile />} />
         <Route
-          path="/Trip-connect/trips/peopleInfo/support-partner"
+          path="/Trip-connect/support-partner"
           element={<SupportPartner />}
+        />
+        <Route
+          path="/Trip-connect/:category/confirmation"
+          element={<Confirmation />}
         />
         <Route path="*" element={<NotFound />} /> {/* Catch-all 404 route */}
       </Routes>

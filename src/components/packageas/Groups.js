@@ -56,7 +56,7 @@ const Groups = () => {
               heading={group.heading}
               description={group.description}
               buttonText={group.buttonText}
-              buttonLink="/Trip-connect/groups/PeopleInfo"
+              buttonLink="/Trip-connect/groups/confirmation"
             />
           ) : (
             <AboutGroup2
@@ -64,7 +64,7 @@ const Groups = () => {
               heading={group.heading}
               description={group.description}
               buttonText={group.buttonText}
-              buttonLink="/Trip-connect/groups/PeopleInfo"
+              buttonLink="/Trip-connect/groups/confirmation"
             />
           )
         )}
