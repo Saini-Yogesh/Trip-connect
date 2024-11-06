@@ -20,6 +20,7 @@ import NotFound from "./components/notFound/NotFound";
 import ProfileEdit from "./components/ProfileEdit/profileEdit";
 import checkTokenExpiration from "./checkTokenExpiration";
 import AllHistory from "./components/profile/ViewAllHisteory";
+import SupportPartner from "./components/peoplesInfo/supportPartner/SupportPartner";
 
 const AppContent = () => {
   useScrollToTop();
@@ -63,6 +64,10 @@ const AppContent = () => {
           element={<AllHistory />}
         />
         <Route path="/Trip-connect/profile/:username" element={<Profile />} />
+        <Route
+          path="/Trip-connect/trips/peopleInfo/support-partner"
+          element={<SupportPartner />}
+        />
         <Route path="*" element={<NotFound />} /> {/* Catch-all 404 route */}
       </Routes>
       <FooterNavbar />

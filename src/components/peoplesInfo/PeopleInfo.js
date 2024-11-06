@@ -161,6 +161,30 @@ const PeopleInfo = () => {
               Go
             </button>
           </form>
+          <button
+            onClick={() =>
+              navigate("/Trip-connect/trips/peopleInfo/support-partner")
+            }
+            style={{
+              backgroundColor: "#4CAF50",
+              color: "white",
+              border: "none",
+              borderRadius: "1vmin",
+              padding: "2vmin 2.5vmin",
+              fontSize: "2.2vmin",
+              cursor: "pointer",
+              display: "inline-block",
+              transition: "background-color 0.3s ease",
+              margin: "1vmin",
+            }}
+            onMouseOver={(e) => (e.target.style.backgroundColor = "#45a049")} // Darker green on hover
+            onMouseOut={(e) => (e.target.style.backgroundColor = "#4CAF50")}
+          >
+            Buy me a coffee on TripConnect{" "}
+            <span style={{ color: "#FFD700", fontWeight: "bold" }}>
+              Thank You!
+            </span>
+          </button>
         </div>
       ) : (
         <div className={styles.overlay}>
