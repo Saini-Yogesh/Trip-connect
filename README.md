@@ -12,17 +12,17 @@ TripConnect uses a decoupled client-server architecture:
 
 ```mermaid
 graph TD
-    subgraph Frontend Client (Vercel)
+    subgraph "Frontend Client (Vercel)"
         A[React 19 + Vite] --> B[Axios HTTP Client]
         A --> C[Socket.io-client]
     end
 
-    subgraph Backend Server (Render)
+    subgraph "Backend Server (Render)"
         D[Express.js App] --> E[REST Controllers]
         F[Socket.io Server] --> G[Real-Time Events]
     end
 
-    subgraph Database (MongoDB Atlas)
+    subgraph "Database (MongoDB Atlas)"
         E --> H[(Mongoose Models)]
         G --> H
     end
