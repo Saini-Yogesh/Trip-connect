@@ -1,0 +1,131 @@
+.pageContainer {
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.header h2 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.header p {
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+/* Tabs Row */
+.tabsRow {
+  display: flex;
+  border-bottom: 1px solid var(--border-glass);
+  margin-bottom: 40px;
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.tabBtn {
+  background: none;
+  border: none;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding: 12px 20px;
+  cursor: pointer;
+  position: relative;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.tabBtn:hover {
+  color: #ffffff;
+}
+
+.tabActive {
+  color: var(--accent-primary) !important;
+}
+
+.tabActive::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-primary);
+}
+
+/* Grid layout */
+.tripsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.loaderWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.errorText {
+  color: #ef4444;
+  text-align: center;
+  font-size: 15px;
+}
+
+/* Empty Dashboard layouts */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 80px 40px;
+  gap: 14px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.emptyIcon {
+  color: var(--text-muted);
+}
+
+.emptyState h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.emptyState p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 400px;
+}
+
+/* Responsive configurations */
+@media (max-width: 992px) {
+  .tripsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .tripsGrid {
+    grid-template-columns: 1fr;
+  }
+  .tabBtn {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+}

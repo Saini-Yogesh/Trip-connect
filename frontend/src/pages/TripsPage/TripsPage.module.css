@@ -1,0 +1,181 @@
+.pageContainer {
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.header h2 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.header p {
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+/* Filter bar styling */
+.filterBar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 24px;
+  margin-bottom: 40px;
+  border-radius: 14px;
+  flex-wrap: wrap;
+}
+
+.filterTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  color: #ffffff;
+  min-width: 80px;
+}
+
+.filterInputs {
+  display: flex;
+  flex-grow: 1;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.inputCol {
+  flex: 1;
+  min-width: 180px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 12px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.filterInput {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-glass);
+  border-radius: 8px;
+  padding: 10px 12px 10px 38px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: #ffffff;
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+.filterInput:focus {
+  border-color: var(--accent-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.filterInput[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.filterButtons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Trips Display Grid */
+.tripsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.loaderWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.errorText {
+  color: #ef4444;
+  text-align: center;
+  font-size: 15px;
+  padding: 40px;
+}
+
+/* Empty search result states */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 60px 40px;
+  gap: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.emptyIcon {
+  color: var(--text-muted);
+}
+
+.emptyState h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.emptyState p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 400px;
+}
+
+.emptyActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* Responsive breakdowns */
+@media (max-width: 992px) {
+  .tripsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .filterBar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+  }
+  .filterInputs {
+    flex-direction: column;
+  }
+  .inputCol {
+    width: 100%;
+  }
+  .filterButtons {
+    justify-content: flex-end;
+    margin-top: 8px;
+  }
+  .tripsGrid {
+    grid-template-columns: 1fr;
+  }
+}
