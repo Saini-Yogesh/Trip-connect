@@ -70,7 +70,7 @@ const TripCard = ({ trip, currentUser }) => {
         {/* Creator Info */}
         <div className={styles.creatorRow}>
           <Link to={`/profile/${createdBy?._id || ""}`} className={styles.creatorLink}>
-            <img src={creatorImg} alt={creatorName} className={styles.creatorAvatar} />
+            <img src={creatorImg} alt={creatorName} className={styles.creatorAvatar} loading="lazy" />
             <div className={styles.creatorDetails}>
               <span className={styles.creatorName}>{creatorName}</span>
               <span className={styles.creatorRating}>★ {creatorRating}</span>

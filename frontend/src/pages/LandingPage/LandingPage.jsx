@@ -218,7 +218,7 @@ const LandingPage = () => {
                 <div className={styles.trustPointItem}>
                   <CheckCircle size={20} className={styles.trustPointIcon} />
                   <div>
-                    <h4 className={styles.trustPointTitle}>Community Vouching & Reviews</h4>
+                    <h3 className={styles.trustPointTitle}>Community Vouching & Reviews</h3>
                     <p className={styles.trustPointDesc}>Every traveler leaves feedback. Read real ratings and reviews from previous co-travelers before sharing a trip.</p>
                   </div>
                 </div>
@@ -226,7 +226,7 @@ const LandingPage = () => {
                 <div className={styles.trustPointItem}>
                   <CheckCircle size={20} className={styles.trustPointIcon} />
                   <div>
-                    <h4 className={styles.trustPointTitle}>Secure In-App Chatting</h4>
+                    <h3 className={styles.trustPointTitle}>Secure In-App Chatting</h3>
                     <p className={styles.trustPointDesc}>No need to exchange phone numbers or social media profiles immediately. Coordinate all plans safely inside our encrypted channels.</p>
                   </div>
                 </div>
@@ -234,7 +234,7 @@ const LandingPage = () => {
                 <div className={styles.trustPointItem}>
                   <CheckCircle size={20} className={styles.trustPointIcon} />
                   <div>
-                    <h4 className={styles.trustPointTitle}>Mandatory Profiles & Bios</h4>
+                    <h3 className={styles.trustPointTitle}>Mandatory Profiles & Bios</h3>
                     <p className={styles.trustPointDesc}>Profiles require details like age, gender, specific interests, and bios, making it easier to select companions with similar vibes.</p>
                   </div>
                 </div>
@@ -314,9 +314,10 @@ const LandingPage = () => {
                   src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150"
                   alt="Alice Vance"
                   className={styles.clientAvatar}
+                  loading="lazy"
                 />
                 <div>
-                  <h4 className={styles.clientName}>Alice Vance</h4>
+                  <h3 className={styles.clientName}>Alice Vance</h3>
                   <span className={styles.clientRole}>Solo Traveler since 2024</span>
                 </div>
               </div>
@@ -336,9 +337,10 @@ const LandingPage = () => {
                   src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150"
                   alt="Bob Miller"
                   className={styles.clientAvatar}
+                  loading="lazy"
                 />
                 <div>
-                  <h4 className={styles.clientName}>Bob Miller</h4>
+                  <h3 className={styles.clientName}>Bob Miller</h3>
                   <span className={styles.clientRole}>Digital Nomad</span>
                 </div>
               </div>
@@ -358,9 +360,10 @@ const LandingPage = () => {
                   src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150"
                   alt="Diana Prince"
                   className={styles.clientAvatar}
+                  loading="lazy"
                 />
                 <div>
-                  <h4 className={styles.clientName}>Diana Prince</h4>
+                  <h3 className={styles.clientName}>Diana Prince</h3>
                   <span className={styles.clientRole}>History Enthusiast</span>
                 </div>
               </div>

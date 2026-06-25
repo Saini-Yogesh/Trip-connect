@@ -1,10 +1,16 @@
 # TripConnect
+> A social platform to find travel companions, plan itineraries, and explore the world together.
 
-TripConnect is a modern social platform designed to help travelers find travel companions, plan itineraries together, and share trip expenses.
+TripConnect enables travelers to discover upcoming trips, connect with fellow explorers, align via group chat rooms, and coordinate trip requests and shared travel costs.
 
-## Core Features
-- **Browse Trip Groups**: Discover upcoming trips created by other travelers.
-- **Create a Trip**: Plan your own adventure, set dates, destination, budget, and description.
-- **Group Chat Room**: Real-time communication within trip members to align on planning.
-- **Join Requests**: Safe member verification system for organizers to approve applicants.
-- **Detailed Itinerary Info**: Explore milestones, destinations, budgets, and participant reviews.
+## Main Navigation
+- [Explore Trips](https://tripconnect-frontend.vercel.app/trips): Browse open trips by destination, dates, and budget.
+- [Create a Trip](https://tripconnect-frontend.vercel.app/create-trip): Organize a new adventure, set group constraints, and accept members.
+- [My Dashboard](https://tripconnect-frontend.vercel.app/my-trips): Manage trip hosting, pending applicant requests, and joint adventures.
+
+## Information & Support
+- [About Us](https://tripconnect-frontend.vercel.app/about): Learn about the TripConnect crew and our mission.
+- [Safety Guidelines](https://tripconnect-frontend.vercel.app/safety): Important guidelines on verifying travel buddies and safe exploration.
+- [Help Center](https://tripconnect-frontend.vercel.app/support): Support resources, contact forms, and travel FAQs.
+- [Privacy Policy](https://tripconnect-frontend.vercel.app/privacy): Information on user data protection and privacy.
+- [Terms of Service](https://tripconnect-frontend.vercel.app/terms): General rules of conduct and terms for using the platform.
