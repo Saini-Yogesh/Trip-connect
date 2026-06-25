@@ -175,9 +175,11 @@ app.get("/sitemap.xml", async (req, res) => {
   }
 });
 
-// Serve static assets in production & inject SEO metadata (only if frontend build exists)
+// Serve static assets in production & inject SEO metadata (only if frontend build exists and serving is enabled)
 const distPath = path.join(__dirname, "../frontend/dist");
-const isServingFrontend = process.env.NODE_ENV === "production" && fs.existsSync(path.join(distPath, "index.html"));
+const isServingFrontend = process.env.NODE_ENV === "production" && 
+                          process.env.SERVE_FRONTEND === "true" && 
+                          fs.existsSync(path.join(distPath, "index.html"));
 
 if (isServingFrontend) {
   // Serve static assets
@@ -218,8 +220,13 @@ if (isServingFrontend) {
   });
 
   // Catch-all to serve index.html for React routing
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(distPath, "index.html"));
+  app.get("*", (req, res, next) => {
+    const indexPath = path.join(distPath, "index.html");
+    if (fs.existsSync(indexPath)) {
+      res.sendFile(indexPath);
+    } else {
+      next();
+    }
   });
 } else {
   // Root API status route
@@ -227,7 +234,7 @@ if (isServingFrontend) {
     res.send("Yes, this API is working");
   });
 
-  // Catch-all 404 Route for Development
+  // Catch-all 404 Route for Development / Standalone API
   app.use((req, res, next) => {
     res.status(404).json({ success: false, message: "API endpoint not found" });
   });
