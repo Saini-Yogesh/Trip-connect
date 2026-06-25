@@ -102,8 +102,7 @@ Sitemap: ${sitemapUrl}
 // Sitemap.xml dynamic handler
 app.get("/sitemap.xml", async (req, res) => {
   try {
-    const protocol = req.secure || req.headers["x-forwarded-proto"] === "https" ? "https" : "http";
-    const host = `${protocol}://${req.headers.host}`;
+    const host = process.env.FRONTEND_URL || "https://tripconnect-frontend.vercel.app";
     
     // Fetch all trips to include them in the sitemap
     const trips = await Trip.find({}).select("_id updatedAt");
