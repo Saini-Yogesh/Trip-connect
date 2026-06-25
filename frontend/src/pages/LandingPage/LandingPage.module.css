@@ -314,3 +314,292 @@
     gap: 16px;
   }
 }
+
+/* Stats Section */
+.statsSection {
+  padding: 40px 0;
+  border-top: 1px solid var(--border-glass);
+  border-bottom: 1px solid var(--border-glass);
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.statCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.statNumber {
+  font-size: 40px;
+  font-weight: 800;
+  font-family: var(--font-display);
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.statLabel {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* How It Works Section */
+.howSection {
+  padding: 80px 0 40px;
+}
+
+.howGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.howCard {
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  position: relative;
+}
+
+.stepNumber {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 32px;
+  background-color: var(--accent-primary);
+  color: #ffffff;
+  font-weight: 800;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  border: 3px solid var(--bg-primary);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+}
+
+.howIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-glass);
+  color: var(--accent-primary);
+  margin-top: 10px;
+}
+
+.howCard h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.howCard p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Safety & Trust Section */
+.trustSection {
+  padding: 60px 0;
+  background: radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 60%);
+}
+
+.trustContainer {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.trustContent h2 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.trustContent p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 30px;
+  font-size: 15px;
+}
+
+.trustPoints {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.trustPointItem {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.trustPointIcon {
+  color: var(--accent-primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.trustPointTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.trustPointDesc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.trustBadgeCard {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+  position: relative;
+}
+
+.shieldIconLarge {
+  color: var(--accent-primary);
+  filter: drop-shadow(0 0 15px rgba(16, 185, 129, 0.3));
+}
+
+.trustBadgeCard h3 {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.badgeGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+.badgeItem {
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-glass);
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Testimonials Section */
+.testimonialsSection {
+  padding: 80px 0;
+  border-top: 1px solid var(--border-glass);
+}
+
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.testimonialCard {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.quoteText {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.ratingRow {
+  display: flex;
+  gap: 4px;
+  color: #fbbf24;
+}
+
+.clientMeta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.clientAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border-glass);
+}
+
+.clientName {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.clientRole {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* Responsiveness for new sections */
+@media (max-width: 992px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .howGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .trustContainer {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .testimonialsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+  .howGrid {
+    grid-template-columns: 1fr;
+  }
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+  }
+  .trustBadgeCard {
+    padding: 24px;
+  }
+  .badgeGrid {
+    grid-template-columns: 1fr;
+  }
+}

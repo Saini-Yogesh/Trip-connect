@@ -1,19 +1,20 @@
 .pageWrapper {
-  padding-top: 40px;
-  padding-bottom: 60px;
+  padding-top: 50px;
+  padding-bottom: 80px;
 }
 
 .header {
-  margin-bottom: 24px;
+  margin-bottom: 36px;
 }
 
 .backLink {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   font-size: 14px;
+  font-weight: 500;
   color: var(--text-secondary);
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   transition: color var(--transition-fast);
 }
 
@@ -22,7 +23,7 @@
 }
 
 .header h2 {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 800;
   color: #ffffff;
 }

@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Send, User, Circle, Compass } from "lucide-react";
+import { Send, User, Circle, Compass, Info, MapPin, Calendar, DollarSign, Users, X } from "lucide-react";
 import { useSocket } from "../../context/SocketContext.jsx";
 import { useAuth } from "../../context/AuthContext.jsx";
 import axios from "axios";
 import styles from "./ChatBox.module.css";
 import Button from "../Button/Button.jsx";
 
-const ChatBox = ({ tripId, tripMembers = [] }) => {
+const ChatBox = ({ tripId, tripMembers = [], trip = null }) => {
   const socket = useSocket();
   const { user } = useAuth();
   const [messages, setMessages] = useState([]);
@@ -15,6 +15,7 @@ const ChatBox = ({ tripId, tripMembers = [] }) => {
   const [typers, setTypers] = useState({}); // userId -> name
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [showSidebar, setShowSidebar] = useState(window.innerWidth > 992);
 
   const messagesEndRef = useRef(null);
   const typingTimeoutRef = useRef(null);
@@ -55,7 +56,6 @@ const ChatBox = ({ tripId, tripMembers = [] }) => {
 
     // Handle incoming messages
     socket.on("receive_message", (message) => {
-      // Add message if it matches the current conversation's conversation ID
       setMessages((prev) => [...prev, message]);
     });
 
@@ -95,6 +95,17 @@ const ChatBox = ({ tripId, tripMembers = [] }) => {
   useEffect(() => {
     scrollToBottom();
   }, [messages, typers]);
+
+  // Handle window resize to auto-hide sidebar on small screens
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 992) {
+        setShowSidebar(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Typing event handler
   const handleInputChange = (e) => {
@@ -145,6 +156,26 @@ const ChatBox = ({ tripId, tripMembers = [] }) => {
     });
   };
 
+  const renderDateDivider = (dateStr, key) => {
+    const current = new Date(dateStr);
+    const today = new Date();
+    const yesterday = new Date();
+    yesterday.setDate(today.getDate() - 1);
+
+    let label = current.toLocaleDateString([], { month: "long", day: "numeric", year: "numeric" });
+    if (current.toDateString() === today.toDateString()) {
+      label = "Today";
+    } else if (current.toDateString() === yesterday.toDateString()) {
+      label = "Yesterday";
+    }
+
+    return (
+      <div key={`date-divider-${key}`} className={styles.dateDivider}>
+        <span>{label}</span>
+      </div>
+    );
+  };
+
   if (loading) {
     return (
       <div className={styles.loadingContainer}>
@@ -164,8 +195,63 @@ const ChatBox = ({ tripId, tripMembers = [] }) => {
     );
   }
 
-  // Get active typers array
   const activeTypersList = Object.values(typers).filter(Boolean);
+
+  // Group messages & inject date headers
+  const renderedMessageElements = [];
+  let lastDateString = null;
+
+  messages.forEach((msg, idx) => {
+    const msgDateString = new Date(msg.createdAt).toDateString();
+    
+    // Inject Date Divider if day changed
+    if (msgDateString !== lastDateString) {
+      renderedMessageElements.push(renderDateDivider(msg.createdAt, msg._id));
+      lastDateString = msgDateString;
+    }
+
+    const isMe = msg.sender?._id === user?._id;
+    const senderName = msg.sender?.name || "Unknown";
+    const senderImg = msg.sender?.profileImage || "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150";
+
+    // Determine consecutive message grouping (same sender within 5 mins)
+    const prevMsg = idx > 0 ? messages[idx - 1] : null;
+    const isConsecutive = prevMsg && 
+                          prevMsg.sender?._id === msg.sender?._id &&
+                          (new Date(msg.createdAt) - new Date(prevMsg.createdAt) < 5 * 60 * 1000) &&
+                          (new Date(prevMsg.createdAt).toDateString() === msgDateString);
+
+    renderedMessageElements.push(
+      <div
+        key={msg._id}
+        className={`${styles.messageWrapper} ${isMe ? styles.messageMe : styles.messageOther} ${isConsecutive ? styles.consecutive : ""}`}
+      >
+        {/* Avatar spacing placeholder or actual avatar */}
+        {!isMe && (
+          !isConsecutive ? (
+            <img
+              src={senderImg}
+              alt={senderName}
+              className={styles.messageAvatar}
+            />
+          ) : (
+            <div className={styles.avatarPlaceholder} />
+          )
+        )}
+
+        <div className={styles.messageContent}>
+          {/* Sender name only for first message in group */}
+          {!isMe && !isConsecutive && <span className={styles.messageSender}>{senderName}</span>}
+          <div className={styles.messageBubble}>
+            <p>{msg.text}</p>
+            <span className={styles.messageTime}>
+              {formatTime(msg.createdAt)}
+            </span>
+          </div>
+        </div>
+      </div>
+    );
+  });
 
   return (
     <div className={`${styles.chatContainer} glass-panel`}>
@@ -176,7 +262,7 @@ const ChatBox = ({ tripId, tripMembers = [] }) => {
           {tripMembers.map((member) => {
             const isOnline = onlineUserIds.includes(member._id);
             return (
-              <div key={member._id} className={styles.memberItem}>
+              <div key={member._id} className={`${styles.memberItem} ${!isOnline ? styles.offlineMember : ""}`}>
                 <div className={styles.avatarWrapper}>
                   <img
                     src={member.profileImage || "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150"}
@@ -210,6 +296,16 @@ const ChatBox = ({ tripId, tripMembers = [] }) => {
               {onlineUserIds.length} of {tripMembers.length} active now
             </p>
           </div>
+          {trip && (
+            <button
+              onClick={() => setShowSidebar(!showSidebar)}
+              className={styles.infoButton}
+              title="Toggle Itinerary Details"
+              aria-label="Toggle Itinerary Details"
+            >
+              <Info size={20} />
+            </button>
+          )}
         </div>
 
         {/* Message Log */}
@@ -219,38 +315,13 @@ const ChatBox = ({ tripId, tripMembers = [] }) => {
               <p>No messages yet. Send a message to start planning the trip!</p>
             </div>
           ) : (
-            messages.map((msg) => {
-              const isMe = msg.sender?._id === user?._id;
-              const senderName = msg.sender?.name || "Unknown";
-              const senderImg = msg.sender?.profileImage || "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150";
-
-              return (
-                <div
-                  key={msg._id}
-                  className={`${styles.messageWrapper} ${isMe ? styles.messageMe : styles.messageOther}`}
-                >
-                  {!isMe && (
-                    <img
-                      src={senderImg}
-                      alt={senderName}
-                      className={styles.messageAvatar}
-                    />
-                  )}
-                  <div className={styles.messageContent}>
-                    {!isMe && <span className={styles.messageSender}>{senderName}</span>}
-                    <div className={styles.messageBubble}>
-                      <p>{msg.text}</p>
-                      <span className={styles.messageTime}>{formatTime(msg.createdAt)}</span>
-                    </div>
-                  </div>
-                </div>
-              );
-            })
+            renderedMessageElements
           )}
 
           {/* Typing Indicator */}
           {activeTypersList.length > 0 && (
             <div className={`${styles.messageWrapper} ${styles.messageOther}`}>
+              <div className={styles.avatarPlaceholder} />
               <div className={styles.typingIndicatorWrapper}>
                 <div className={styles.typingDots}>
                   <span></span>
@@ -273,15 +344,75 @@ const ChatBox = ({ tripId, tripMembers = [] }) => {
           <input
             type="text"
             className={styles.textInput}
-            placeholder="Type a message to your travel group..."
+            placeholder="Type a message..."
             value={inputText}
             onChange={handleInputChange}
           />
-          <Button type="submit" variant="primary" className={styles.sendButton}>
+          <button type="submit" className={styles.sendButton} aria-label="Send message" disabled={!inputText.trim()}>
             <Send size={16} />
-          </Button>
+          </button>
         </form>
       </div>
+
+      {/* Right Sidebar: Trip Details */}
+      {trip && showSidebar && (
+        <div className={styles.rightSidebar}>
+          <div className={styles.rightSidebarHeader}>
+            <h4>Trip Details</h4>
+            <button
+              onClick={() => setShowSidebar(false)}
+              className={styles.closeSidebarBtn}
+              aria-label="Close sidebar"
+            >
+              <X size={18} />
+            </button>
+          </div>
+          <div className={styles.rightSidebarContent}>
+            <div className={styles.tripSection}>
+              <div className={styles.tripMetaItem}>
+                <MapPin size={16} />
+                <div>
+                  <label>Destination</label>
+                  <span>{trip.destination}</span>
+                </div>
+              </div>
+              <div className={styles.tripMetaItem}>
+                <Calendar size={16} />
+                <div>
+                  <label>Dates</label>
+                  <span>
+                    {new Date(trip.startDate).toLocaleDateString([], { month: "short", day: "numeric" })} -{" "}
+                    {new Date(trip.endDate).toLocaleDateString([], { month: "short", day: "numeric", year: "numeric" })}
+                  </span>
+                </div>
+              </div>
+              <div className={styles.tripMetaItem}>
+                <DollarSign size={16} />
+                <div>
+                  <label>Budget</label>
+                  <span>${trip.budget}</span>
+                </div>
+              </div>
+              <div className={styles.tripMetaItem}>
+                <Users size={16} />
+                <div>
+                  <label>Group Limit</label>
+                  <span>
+                    {trip.members?.length} / {trip.maxMembers} spots filled
+                  </span>
+                </div>
+              </div>
+            </div>
+            
+            <div className={styles.divider}></div>
+
+            <div className={styles.descriptionSection}>
+              <h5>Trip Description</h5>
+              <p>{trip.description}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

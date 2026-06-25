@@ -81,7 +81,7 @@ const ChatPage = () => {
 
       {/* Embedded ChatBox */}
       <div className={styles.chatWrapper}>
-        <ChatBox tripId={tripId} tripMembers={trip.members || []} />
+        <ChatBox tripId={tripId} tripMembers={trip.members || []} trip={trip} />
       </div>
     </div>
   );

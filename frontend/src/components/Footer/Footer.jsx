@@ -24,6 +24,7 @@ const Footer = () => {
             <h4>Quick Links</h4>
             <ul className={styles.linksList}>
               <li><Link to="/trips">Explore Trips</Link></li>
+              <li><Link to="/about">About Us</Link></li>
               <li><Link to="/create-trip">Create a Trip</Link></li>
               <li><Link to="/login">Sign In</Link></li>
               <li><Link to="/register">Join TripConnect</Link></li>
@@ -34,10 +35,10 @@ const Footer = () => {
           <div className={styles.linksCol}>
             <h4>Legal</h4>
             <ul className={styles.linksList}>
-              <li><a href="#privacy">Privacy Policy</a></li>
-              <li><a href="#terms">Terms of Service</a></li>
-              <li><a href="#safety">Safety Guidelines</a></li>
-              <li><a href="#support">Help Center</a></li>
+              <li><Link to="/privacy">Privacy Policy</Link></li>
+              <li><Link to="/terms">Terms of Service</Link></li>
+              <li><Link to="/safety">Safety Guidelines</Link></li>
+              <li><Link to="/support">Help Center</Link></li>
             </ul>
           </div>
 

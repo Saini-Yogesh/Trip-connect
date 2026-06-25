@@ -50,6 +50,9 @@ const Navbar = () => {
           <Link to="/trips" className={`${styles.navLink} ${isActive("/trips") ? styles.active : ""}`}>
             Explore Trips
           </Link>
+          <Link to="/about" className={`${styles.navLink} ${isActive("/about") ? styles.active : ""}`}>
+            About Us
+          </Link>
           
           {user ? (
             <>
@@ -124,6 +127,9 @@ const Navbar = () => {
         <div className={styles.mobileDrawer}>
           <Link to="/trips" className={`${styles.mobileNavLink} ${isActive("/trips") ? styles.mobileActive : ""}`}>
             Explore Trips
+          </Link>
+          <Link to="/about" className={`${styles.mobileNavLink} ${isActive("/about") ? styles.mobileActive : ""}`}>
+            About Us
           </Link>
 
           {user ? (

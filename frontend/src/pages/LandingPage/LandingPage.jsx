@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { Shield, Sparkles, DollarSign, ArrowRight, MapPin, Compass, Search } from "lucide-react";
+import { Shield, Sparkles, DollarSign, ArrowRight, MapPin, Compass, Search, Star, UserCheck, Smile, Globe, Users, CheckCircle, MessageSquare } from "lucide-react";
 import styles from "./LandingPage.module.css";
 import Button from "../../components/Button/Button.jsx";
 import TripCard from "../../components/TripCard/TripCard.jsx";
@@ -94,6 +94,30 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Stats Section */}
+      <section className={styles.statsSection}>
+        <div className="container">
+          <div className={styles.statsGrid}>
+            <div className={styles.statCard}>
+              <span className={styles.statNumber}>15,000+</span>
+              <span className={styles.statLabel}>Trips Completed</span>
+            </div>
+            <div className={styles.statCard}>
+              <span className={styles.statNumber}>45,000+</span>
+              <span className={styles.statLabel}>Active Members</span>
+            </div>
+            <div className={styles.statCard}>
+              <span className={styles.statNumber}>120+</span>
+              <span className={styles.statLabel}>Countries Explored</span>
+            </div>
+            <div className={styles.statCard}>
+              <span className={styles.statNumber}>4.9 / 5.0</span>
+              <span className={styles.statLabel}>Average Member Rating</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className={styles.featuresSection}>
         <div className="container">
@@ -133,6 +157,105 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* How It Works Section */}
+      <section className={styles.howSection}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <h2>How TripConnect Works</h2>
+            <p>Your journey to matching and traveling with reliable companions in 4 simple steps.</p>
+          </div>
+
+          <div className={styles.howGrid}>
+            <div className={`${styles.howCard} glass-panel`}>
+              <span className={styles.stepNumber}>1</span>
+              <div className={styles.howIconWrapper}>
+                <UserCheck size={24} />
+              </div>
+              <h3>Create & Verify Profile</h3>
+              <p>Sign up, list your travel interests, and verify your account details to start building trust.</p>
+            </div>
+
+            <div className={`${styles.howCard} glass-panel`}>
+              <span className={styles.stepNumber}>2</span>
+              <div className={styles.howIconWrapper}>
+                <Globe size={24} />
+              </div>
+              <h3>Create or Find Trips</h3>
+              <p>Browse existing itineraries or create your own custom trip with destinations and budgets.</p>
+            </div>
+
+            <div className={`${styles.howCard} glass-panel`}>
+              <span className={styles.stepNumber}>3</span>
+              <div className={styles.howIconWrapper}>
+                <MessageSquare size={24} />
+              </div>
+              <h3>Match & Group Chat</h3>
+              <p>Request to join groups, get approved by hosts, and finalize details inside secure group chats.</p>
+            </div>
+
+            <div className={`${styles.howCard} glass-panel`}>
+              <span className={styles.stepNumber}>4</span>
+              <div className={styles.howIconWrapper}>
+                <Smile size={24} />
+              </div>
+              <h3>Travel & Share Costs</h3>
+              <p>Embark on your adventure, split expenses safely, and rate your companion afterwards.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Safety & Trust Section */}
+      <section className={styles.trustSection}>
+        <div className="container">
+          <div className={styles.trustContainer}>
+            <div className={styles.trustContent}>
+              <h2>Your Safety is Our Priority</h2>
+              <p>
+                We understand that traveling with new people requires confidence. That's why we've built layers of trust and verification into the core of TripConnect to ensure you feel secure every step of the way.
+              </p>
+              <div className={styles.trustPoints}>
+                <div className={styles.trustPointItem}>
+                  <CheckCircle size={20} className={styles.trustPointIcon} />
+                  <div>
+                    <h4 className={styles.trustPointTitle}>Community Vouching & Reviews</h4>
+                    <p className={styles.trustPointDesc}>Every traveler leaves feedback. Read real ratings and reviews from previous co-travelers before sharing a trip.</p>
+                  </div>
+                </div>
+
+                <div className={styles.trustPointItem}>
+                  <CheckCircle size={20} className={styles.trustPointIcon} />
+                  <div>
+                    <h4 className={styles.trustPointTitle}>Secure In-App Chatting</h4>
+                    <p className={styles.trustPointDesc}>No need to exchange phone numbers or social media profiles immediately. Coordinate all plans safely inside our encrypted channels.</p>
+                  </div>
+                </div>
+
+                <div className={styles.trustPointItem}>
+                  <CheckCircle size={20} className={styles.trustPointIcon} />
+                  <div>
+                    <h4 className={styles.trustPointTitle}>Mandatory Profiles & Bios</h4>
+                    <p className={styles.trustPointDesc}>Profiles require details like age, gender, specific interests, and bios, making it easier to select companions with similar vibes.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className={`${styles.trustBadgeCard} glass-panel`}>
+              <Shield size={64} className={styles.shieldIconLarge} />
+              <h3>TripConnect Secure Badge</h3>
+              <p>We work tirelessly to verify profiles and maintain community guidelines for a respectful travel community.</p>
+              <div className={styles.badgeGrid}>
+                <div className={styles.badgeItem}>Verified Accounts</div>
+                <div className={styles.badgeItem}>Zero Spam Policy</div>
+                <div className={styles.badgeItem}>Encrypted Socket Chat</div>
+                <div className={styles.badgeItem}>24/7 Support Center</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Recent Trips Section */}
       <section className={styles.recentSection}>
         <div className="container">
@@ -165,6 +288,84 @@ const LandingPage = () => {
               ))}
             </div>
           )}
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className={styles.testimonialsSection}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <h2>What Our Travelers Say</h2>
+            <p>Read inspiring success stories from solo travelers who found friends and shared adventures.</p>
+          </div>
+
+          <div className={styles.testimonialsGrid}>
+            <div className={`${styles.testimonialCard} glass-panel`}>
+              <div className={styles.ratingRow}>
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={16} fill="#fbbf24" stroke="none" />
+                ))}
+              </div>
+              <p className={styles.quoteText}>
+                "I was extremely hesitant to travel solo to Bali, but I found three amazing co-travelers on TripConnect. We split the villa costs, shared a driver, and had the most incredible trip of my life. We're already planning Rome next summer!"
+              </p>
+              <div className={styles.clientMeta}>
+                <img
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150"
+                  alt="Alice Vance"
+                  className={styles.clientAvatar}
+                />
+                <div>
+                  <h4 className={styles.clientName}>Alice Vance</h4>
+                  <span className={styles.clientRole}>Solo Traveler since 2024</span>
+                </div>
+              </div>
+            </div>
+
+            <div className={`${styles.testimonialCard} glass-panel`}>
+              <div className={styles.ratingRow}>
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={16} fill="#fbbf24" stroke="none" />
+                ))}
+              </div>
+              <p className={styles.quoteText}>
+                "Remote work can be lonely, but coordinating cross-country road trips with fellow developers on TripConnect has completely changed my lifestyle. Spreading accommodation costs makes visiting premium locations extremely affordable."
+              </p>
+              <div className={styles.clientMeta}>
+                <img
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150"
+                  alt="Bob Miller"
+                  className={styles.clientAvatar}
+                />
+                <div>
+                  <h4 className={styles.clientName}>Bob Miller</h4>
+                  <span className={styles.clientRole}>Digital Nomad</span>
+                </div>
+              </div>
+            </div>
+
+            <div className={`${styles.testimonialCard} glass-panel`}>
+              <div className={styles.ratingRow}>
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={16} fill="#fbbf24" stroke="none" />
+                ))}
+              </div>
+              <p className={styles.quoteText}>
+                "I prefer cultural tours and historic sights but none of my local friends share this interest. Through TripConnect, I matched with Charlie for museum-hopping in Kyoto. Having a companion who appreciates slow travel made a huge difference."
+              </p>
+              <div className={styles.clientMeta}>
+                <img
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150"
+                  alt="Diana Prince"
+                  className={styles.clientAvatar}
+                />
+                <div>
+                  <h4 className={styles.clientName}>Diana Prince</h4>
+                  <span className={styles.clientRole}>History Enthusiast</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
