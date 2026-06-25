@@ -175,10 +175,11 @@ app.get("/sitemap.xml", async (req, res) => {
   }
 });
 
-// Serve static assets in production & inject SEO metadata
-if (process.env.NODE_ENV === "production") {
-  const distPath = path.join(__dirname, "../frontend/dist");
+// Serve static assets in production & inject SEO metadata (only if frontend build exists)
+const distPath = path.join(__dirname, "../frontend/dist");
+const isServingFrontend = process.env.NODE_ENV === "production" && fs.existsSync(path.join(distPath, "index.html"));
 
+if (isServingFrontend) {
   // Serve static assets
   app.use(express.static(distPath));
 
@@ -221,6 +222,11 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(distPath, "index.html"));
   });
 } else {
+  // Root API status route
+  app.get("/", (req, res) => {
+    res.send("Yes, this API is working");
+  });
+
   // Catch-all 404 Route for Development
   app.use((req, res, next) => {
     res.status(404).json({ success: false, message: "API endpoint not found" });
