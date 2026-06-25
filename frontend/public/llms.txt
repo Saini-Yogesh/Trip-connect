@@ -1,0 +1,10 @@
+# TripConnect
+
+TripConnect is a modern social platform designed to help travelers find travel companions, plan itineraries together, and share trip expenses.
+
+## Core Features
+- **Browse Trip Groups**: Discover upcoming trips created by other travelers.
+- **Create a Trip**: Plan your own adventure, set dates, destination, budget, and description.
+- **Group Chat Room**: Real-time communication within trip members to align on planning.
+- **Join Requests**: Safe member verification system for organizers to approve applicants.
+- **Detailed Itinerary Info**: Explore milestones, destinations, budgets, and participant reviews.

@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Allow: /trips
+Allow: /about
+Allow: /safety
+Allow: /support
+Allow: /privacy
+Allow: /terms
+Disallow: /login
+Disallow: /register
+Disallow: /profile/
+Disallow: /edit-profile
+Disallow: /create-trip
+Disallow: /edit-trip/
+Disallow: /my-trips
+Disallow: /chat/
+
+Sitemap: https://tripconnect-frontend.vercel.app/sitemap.xml

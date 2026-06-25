@@ -71,6 +71,7 @@ const Navbar = () => {
                     e.stopPropagation();
                     setDropdownOpen(!dropdownOpen);
                   }}
+                  aria-label="Open User Menu"
                 >
                   <img
                     src={user.profileImage || "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150"}
@@ -117,7 +118,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Icon */}
-        <button className={styles.mobileMenuToggle} onClick={() => setIsOpen(!isOpen)}>
+        <button className={styles.mobileMenuToggle} onClick={() => setIsOpen(!isOpen)} aria-label="Toggle Navigation Menu">
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
